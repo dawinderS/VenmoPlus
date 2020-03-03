@@ -24,7 +24,7 @@ bundle.js.map
 
 # Ignore Byebug command history file.
 .byebug_history
-
+.DS_store/
 # Ignore node_modules
 /public/packs
 /public/packs-test
