@@ -12,10 +12,18 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
   />
 );
 
-const msp = state => {
-  return { loggedIn: Boolean(state.session.id) };
-};
+const Protected = ({ loggedIn, path, component: Component }) => (
+  <Route
+    path={path}
+    render={props => (
+      loggedIn ? <Component {...props} /> : <Redirect to="/login" />
+    )}
+  />
+)
 
-export const AuthRoute = withRouter(
-  connect(msp, null)(Auth)
-);
+const msp = state => ({
+  loggedIn: Boolean(state.session.id)
+});
+
+export const AuthRoute = withRouter(connect(msp)(Auth));
+export const ProtectedRoute = withRouter(connect(msp)(Protected));
