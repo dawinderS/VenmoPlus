@@ -9,7 +9,7 @@ class Homepage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='main-splash'>
         <NavBarContainer />
         <p>below navbar</p>
       </div>

@@ -10,7 +10,7 @@ bundle.js.map
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-!/log/.keep
+/log/.keep
 !/tmp/.keep
 
 ## Environment normalization:
@@ -30,3 +30,7 @@ bundle.js.map
 /public/packs-test
 /public/assets
 /tmp
+
+npm-debug.log
+/config/master.key
+/yarn-error.log/public/assets

@@ -9,7 +9,7 @@ export const NavBar = ({ currentUser, logout }) => {
       <button onClick={logout}>Log Out</button>
     </div>
   ) : (
-      <div>
+      <div className='before_log_in'>
         <Link to="/signup">Sign Up</Link>
         <br />
         <Link to="/login">Log In</Link>
