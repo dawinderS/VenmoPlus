@@ -27,21 +27,36 @@ class SignupForm extends React.Component {
   render() {
     const errors = this.props.errors
     return (
-      <div>
-        <h3>Sign Up</h3>
-        <div>{errors}</div>
-        <form>
-          <label>Username:
-            <input type="text" value={this.state.username} onChange={this.handleInput('username')} />
-          </label>
-          <label>Email:
-            <input type="text" value={this.state.email} onChange={this.handleInput('email')} />
-          </label>
-          <label>Password:
-            <input type="password" value={this.state.password} onChange={this.handleInput('password')} />
-          </label>
-          <button onClick={this.handleSubmit}>Submit</button>
-        </form>
+      <div className='signin-content'>
+        <div className='signin-form'>
+          <div className='signin-header'>
+            <h3>Create your account</h3>
+            <div className='signup-with-fb'>
+              <span className='facebook-f'></span>
+              <span className='fb-sign-text'>Sign Up with Facebook</span>
+            </div>
+          </div>
+
+          <div>{errors}</div>
+
+          <form className='signup-auth-form'>
+            <fieldset className='inputs'>
+              <label className='username-label'>
+                <div className='label-text'>Username</div>
+                <input type="text" placeholder='user' value={this.state.username} onChange={this.handleInput('username')} />
+              </label>
+              <label className='email-label'>
+                <div className='label-text'>Email</div>
+                <input type="email" placeholder='user@gmail.com' value={this.state.email} onChange={this.handleInput('email')} />
+              </label>
+              <label className='password-label'>
+                <div className='label-text'>Password</div>
+                <input type="password" placeholder='•••••••' value={this.state.password} onChange={this.handleInput('password')} />
+              </label>
+            </fieldset>
+            <button onClick={this.handleSubmit}>Sign Up</button>
+          </form>
+        </div>
       </div>
     )
   }

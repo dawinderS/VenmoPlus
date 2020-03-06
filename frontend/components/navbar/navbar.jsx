@@ -4,12 +4,16 @@ import { Route } from "react-router-dom";
 
 export const NavBar = ({ currentUser, logout }) => {
   const display = currentUser ? (
-    <div>
+    <div className='in-navbar'>
       <p>Account</p>
+      <button>
+        <img className="splashlogo" src={window.splashlogo} />
+      </button>
       <button onClick={logout}>Log Out</button>
     </div>
   ) : (
-      <div className='before_log_in'>
+      <div className='out-navbar'>
+        <img className="splashlogo" src={window.splashlogo} />
         <Link to="/signup">Sign Up</Link>
         <br />
         <Link to="/login">Log In</Link>

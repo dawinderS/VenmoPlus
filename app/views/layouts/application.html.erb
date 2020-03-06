@@ -2,11 +2,18 @@
 <html>
   <head>
     <title>Uome</title>
+    <%= favicon_link_tag asset_path('clone-logo.png') %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <script type="text/javascript">
+      window.splashlogo = "<%= image_url('logo.png') %>";
+      window.splash1 = "<%= image_url('splash-phone1.png') %>";
+      window.splash2 = "<%= image_url('splash-phone2.png') %>";
+    </script>
   </head>
 
   <body>

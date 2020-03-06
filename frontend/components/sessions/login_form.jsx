@@ -38,7 +38,8 @@ class LoginForm extends React.Component {
   render() {
     const errors = this.props.errors
     return (
-      <div className='login-form-container'>
+      <div className='entry-form'>
+        <div className='entry-header'></div>
         <h2>Log In</h2>
         <h3>{errors}</h3>
         <form>

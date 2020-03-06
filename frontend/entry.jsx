@@ -21,11 +21,5 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 
-  // let user = { username:'bob', email:'bob@g', id: 1 }
-  // window.user = user;
-  // window.login = login;
-  // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
-
   ReactDOM.render(<Root store={store} />, root);
 });
