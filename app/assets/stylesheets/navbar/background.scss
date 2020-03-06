@@ -1,7 +1,45 @@
 .in-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  max-height: 70px;
+  background: #fff;
+  border-bottom: 1px solid #ededed;
+}
+
+.out-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  max-height: 70px;
+  background: #fff;
+  border-bottom: 1px solid #ededed;
+  padding-left: 80px;
+}
+
+.out-navbar {
 
 }
 
 .splashlogo {
+  width: 95px;
+  height: 18.21px;
+  cursor: pointer;
+}
+
+.splash-link-signup {
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  border-radius: 100px;
   
+}
+
+.splash-link-login {
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  border-radius: 50px;
 }

@@ -6,17 +6,18 @@ export const NavBar = ({ currentUser, logout }) => {
   const display = currentUser ? (
     <div className='in-navbar'>
       <p>Account</p>
-      <button>
-        <img className="splashlogo" src={window.splashlogo} />
-      </button>
+      <img className="splashlogo" src={window.splashlogo} />
       <button onClick={logout}>Log Out</button>
     </div>
   ) : (
       <div className='out-navbar'>
         <img className="splashlogo" src={window.splashlogo} />
-        <Link to="/signup">Sign Up</Link>
-        <br />
-        <Link to="/login">Log In</Link>
+        <button className='splash-link-signup'>
+          <Link to="/signup">Sign Up</Link>
+        </button>
+        <button className='splash-link-login'>
+          <Link to="/login">Log In</Link>
+        </button>
       </div>
     );
 
