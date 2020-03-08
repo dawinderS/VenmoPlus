@@ -27,6 +27,8 @@ export const NavBar = ({ currentUser, logout }) => {
             <FaPlus />
           </div>
         </div>
+        <div id='nav-text1'>Redesigned.</div>
+        <div id='nav-text2'>Simplified.</div>
         <div className='splash-link-signup'>
           <Link className='signup-link' to="/signup">
             <div id='signup-now-text'>Sign Up Now</div>

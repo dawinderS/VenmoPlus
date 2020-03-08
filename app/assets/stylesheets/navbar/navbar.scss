@@ -1,6 +1,6 @@
 .in-navbar {
   position: fixed;
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,6 +47,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: auto;
+  margin-right: 45px;
 }
 
 .splash-link-signup:hover {
@@ -87,4 +89,42 @@
 #login-text {
   font-size: 14px;
   font-weight: bolder;
+}
+
+#nav-text1 {
+  font-size: 13px;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+  margin-left: 42px;
+  letter-spacing: 1px;
+}
+
+#nav-text2 {
+  font-size: 13px;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  font-style: italic;
+  margin-left: 24px;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 830px) {
+  #nav-text1 {
+    display: none;
+  }
+
+  #nav-text2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .splash-link-signup {
+    margin-right: 25px;
+  }
+
+  .splash-link-login {
+    margin-right: 30px;
+  }
 }
