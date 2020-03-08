@@ -1,0 +1,90 @@
+.in-navbar {
+  position: fixed;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  max-height: 70px;
+  background: #fff;
+  border-bottom: 1px solid #ededed;
+}
+
+.out-navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  max-height: 70px;
+  background: #fff;  
+}
+
+.logo-menu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 37px;
+}
+
+.logo-menu-icon {
+  padding-right: 22px;
+}
+
+.splashlogo {
+  width: 95px;
+  height: 18.21px;
+  cursor: pointer;
+}
+
+.splash-link-signup {
+  cursor: pointer;
+  width: 115px;
+  height: 38px;
+  border-radius: 100px;
+  background: #007f6e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-link-signup:hover {
+  background: #0aa18d;
+}
+
+.signup-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+#signup-now-text {
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+.splash-link-login {
+  cursor: pointer;
+  width: 90px;
+  height: 36px;
+  border-radius: 100px;
+  background: #7e9daa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 55px;
+}
+
+.splash-link-login:hover {
+  background: #81969e;
+}
+
+.logout-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+#login-text {
+  font-size: 14px;
+  font-weight: bolder;
+}

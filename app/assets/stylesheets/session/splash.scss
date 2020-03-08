@@ -1,11 +1,17 @@
 .mid-splash {
   display: flex;
   flex-direction: column;
-  background-color: rgb(255, 255, 255);
-
+  background-color: #fff;
+  align-items: center;
 }
 
 .splashbackground {
+  // max-height: 800px;
+  display: block;
+  max-width: 100%;
+}
+
+.splashbackground2 {
   display: block;
   max-width: 100%;
 }
