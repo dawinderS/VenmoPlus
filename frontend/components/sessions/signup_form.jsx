@@ -1,5 +1,7 @@
 import React from "react";
 import { FaPlus } from 'react-icons/fa';
+import { FaUserCircle } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 
 class SignupForm extends React.Component {
@@ -29,29 +31,33 @@ class SignupForm extends React.Component {
     const errors = this.props.errors
     return (
       <div className='signin-content'>
-        <div className='logo-div'>
-          <img className="splashlogo1" src={window.logo1} />
-          <FaPlus size={28} />
-        </div>
+        <Link to='/'>
+          <div className='logo-div'>
+            <img className="splashlogo1" src={window.logo1} />
+            <FaPlus color='black' size={28} />
+          </div>
+        </Link>
 
         <div>{errors}</div>
 
-        <form className='signup-auth-form'>
-          <h3>Create your account</h3>
-          <fieldset className='inputs'>
-            <label className='username-label'>
-              <input type="text" placeholder='username' value={this.state.username} onChange={this.handleInput('username')} />
-            </label>
-            <label className='email-label'>
-              <input type="email" placeholder='email' value={this.state.email} onChange={this.handleInput('email')} />
-            </label>
-            <label className='password-label'>
-              <input type="password" placeholder='password' value={this.state.password} onChange={this.handleInput('password')} />
-            </label>
-          </fieldset>
-          <button onClick={this.handleSubmit}>Sign Up</button>
+        <form className='signup-form'>
+          <div id='login-circle'>
+            <FaUserCircle size={65} />
+          </div>
+          <h3 id='create-acct'>Create your account</h3>
+          <input type="text" placeholder='username' value={this.state.username} onChange={this.handleInput('username')} />
+          <input type="email" placeholder='email' value={this.state.email} onChange={this.handleInput('email')} />
+          <input type="password" placeholder='password' value={this.state.password} onChange={this.handleInput('password')} />
+          <div id='signup-button' onClick={this.handleSubmit}>
+            <div id='signup-button-text'>Sign Up</div>
+          </div>
+          <div id='already-user'>
+            Already an user? 
+            <Link to='/login' >Log In</Link>
+          </div>
+          
         </form>
-        </div>
+      </div>
 
       // <div className='signup-with-fb'>
       //   <span className='facebook-f'></span>

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  username        :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
   validates :username, :session_token, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
@@ -5,8 +17,13 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   
   before_validation :ensure_session_token
-
+  
   attr_reader :password
+
+  has_many :friendships
+
+  has_many :friends, through: :friendships
+  
 
   def self.find_by_credentials(username, email, password)
     user = User.find_by(username: username)
