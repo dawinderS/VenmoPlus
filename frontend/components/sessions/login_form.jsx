@@ -41,33 +41,41 @@ class LoginForm extends React.Component {
   render() {
     const errors = this.props.errors
     return (
-      <div className='signin-content'>
-        <Link to='/'>
-          <div className='logo-div'>
-            <img className="splashlogo1" src={window.logo1} />
-            <FaPlus color='black' size={28} />
-          </div>
-        </Link>
+      <div id='official-signup-div'>
+        <div id='space-creator'></div>
+        <div className='signin-content'>
+          <Link to='/'>
+            <div className='logo-div'>
+              <img className="splashlogo1" src={window.logo1} />
+              <FaPlus color='black' size={28} />
+            </div>
+          </Link>
 
-        <div>{errors}</div>
+          <div>{errors}</div>
 
-        <form className='signup-form'>
-          <div id='login-circle'>
-            <FaUserCircle size={65} />
-          </div>
-          <h3 id='create-acct'>Welcome back!</h3>
-          <input type="text" placeholder='username' value={this.state.username} onChange={this.handleInput('username')} />
-          <input type="email" placeholder='email' value={this.state.email} onChange={this.handleInput('email')} />
-          <input type="password" placeholder='password' value={this.state.password} onChange={this.handleInput('password')} />
-          <div id='signup-button' onClick={this.handleSubmit}>
-            <div id='signup-button-text'>Sign In</div>
-          </div>
-          <div id='already-user'>
-            Not a user yet?
-            <Link to='/signup' >Sign Up</Link>
-          </div>
+          <form className='signup-form'>
+            <div id='login-circle'>
+              <FaUserCircle size={65} />
+            </div>
+            <h3 id='create-acct'>Welcome back!</h3>
+            <input type="text" placeholder='username' value={this.state.username} onChange={this.handleInput('username')} />
+            {/* <input type="email" placeholder='email' value={this.state.email} onChange={this.handleInput('email')} /> */}
+            <input type="password" placeholder='password' value={this.state.password} onChange={this.handleInput('password')} />
+            <div id='signin-demo-btns'>
+              <div id='signup-button' onClick={this.handleSubmit}>
+                <div id='signup-button-text'>Log In</div>
+              </div>
+              <div id='signup-button2' onClick={this.handleDemo}>
+                <div id='signup-button-text'>Demo User</div>
+              </div>
+            </div>
+            <div id='already-user'>
+              Not a user yet?
+              <Link to='/signup' >Sign Up</Link>
+            </div>
 
-        </form>
+          </form>
+        </div>
       </div>
     )
   }

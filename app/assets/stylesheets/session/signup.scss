@@ -1,10 +1,22 @@
+#official-signup-div {
+  display: flex;
+  background: #19a08e;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#space-creator {
+  margin-bottom: 70px;
+}
+
 .signin-content {
   background: #19a08e;
   display: flex;
   height: 770px;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: 795px;
 }
 
 .logo-div {
@@ -80,4 +92,26 @@
   justify-content: center;
   margin-top: 17px;
   margin-bottom: 20px;
+}
+
+#signin-demo-btns {
+  display: flex;
+}
+
+#signup-button2 {
+  text-decoration: none;
+  cursor: pointer;
+  width: 115px;
+  height: 44px;
+  border-radius: 100px;
+  background: #7e9daa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 15px;
+}
+
+#signup-button2:hover {
+  background: #81969e;
 }
