@@ -9,6 +9,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  venmo_credit    :float            default("250.0"), not null
 #
 class User < ApplicationRecord
   validates :username, :session_token, presence: true, uniqueness: true
@@ -23,6 +24,24 @@ class User < ApplicationRecord
   has_many :friendships
 
   has_many :friends, through: :friendships
+
+  has_many :friend_requests,
+    through: :friendships,
+    source: :friends
+  
+  has_many :pending_friends, 
+    through: :friendships,
+    source: :friend
+
+  has_many :transactions
+
+  has_many :received_transactions,
+    foreign_key: :recipient_id,
+    class_name: :Transaction
+  
+  has_many :sent_transactions,
+    foreign_key: :user_id,
+    class_name: :Transaction
   
 
   def self.find_by_credentials(username, email, password)
@@ -44,6 +63,16 @@ class User < ApplicationRecord
     self.session_token = SecureRandom.urlsafe_base64(16)
     self.save!
     self.session_token
+  end
+
+  def receiving_credit(amt)
+    self.venmo_credit += amt
+    self.save!
+  end
+
+  def paying_credit(amt)
+    self.venmo_credit -= amt
+    self.save!
   end
 
   private

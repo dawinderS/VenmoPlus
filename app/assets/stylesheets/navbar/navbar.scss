@@ -57,11 +57,17 @@
 
 .signup-link {
   text-decoration: none;
-  color: #fff;
+  color: #007f6e;
+  margin-left: auto;
+  margin-right: 40px;
+}
+
+.signup-link:hover {
+  color: #025a4e;
 }
 
 #signup-now-text {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bolder;
 }
 
@@ -83,11 +89,16 @@
 
 .logout-link {
   text-decoration: none;
-  color: #fff;
+  color: #68787f;
+  margin-right: 45px;
+}
+
+.logout-link:hover {
+  color: black;
 }
 
 #login-text {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bolder;
 }
 

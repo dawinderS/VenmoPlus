@@ -7,10 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+
+user = User.create(username: 'user', email: 'user@g.com', password: 'password', venmo_credit: 250.00)
+user1 = User.create(username: 'paul', email: 'paul@g.com', password: 'password', venmo_credit: 250.00)
+user2 = User.create(username: 'kawhi', email: 'kawhi@g.com', password: 'password', venmo_credit: 250.00)
+user3 = User.create(username: 'marie', email: 'marie@g.com', password: 'password', venmo_credit: 250.00)
+user4 = User.create(username: 'karl', email: 'karl@g.com', password: 'password', venmo_credit: 250.00)
+
+Transaction.destroy_all
+
+transaction = Transaction.new(user_id: user1.id, recipient_id: user2.id, amount: 20.50, description: 'for that pizza', complete: false)
+transaction1 = Transaction.new(user_id: user2.id, recipient_id: user1.id, amount: 10.00, description: 'dessert!!', complete: false)
+
+
 Friendship.destroy_all
 
-user = User.create(username: 'user', email: 'user@g.com', password: 'password')
-user1 = User.create(username: 'Dawinder', email: 'dawinder@gmail.com', password: 'dawinder')
-user2 = User.create(username: 'Steve', email: 'steve@gmail.com', password: 'password')
-user3 = User.create(username: 'Kawhi', email: 'theklaw@gmail.com', password: 'password')
-user4 = User.create(username: 'Paul', email: 'paul@gmail.com', password: 'password')

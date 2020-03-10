@@ -34,16 +34,12 @@ export const NavBar = ({ currentUser, logout }) => {
         </div>
         <div id='nav-text1'>Redesigned.</div>
         <div id='nav-text2'>Simplified.</div>
-        <div className='splash-link-signup'>
-          <Link className='signup-link' to="/signup">
-            <div id='signup-now-text'>Sign Up Now</div>
-          </Link>
-        </div>
-        <div className='splash-link-login'>
-          <Link className='logout-link' to="/login">
-            <div id='login-text'>Log In</div>
-          </Link>
-        </div>
+        <Link className='signup-link' to="/signup">
+          <div id='signup-now-text'>Sign Up Now</div>
+        </Link>
+        <Link className='logout-link' to="/login">
+          <div id='login-text'>Log In</div>
+        </Link>
       </div>
     );
 
