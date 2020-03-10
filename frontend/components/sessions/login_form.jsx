@@ -46,18 +46,18 @@ class LoginForm extends React.Component {
         <div className='signin-content'>
           <Link to='/'>
             <div className='logo-div'>
-              <img className="splashlogo1" src={window.logo1} />
+              <img className="splashlogo1" src={window.splashlogo} />
               <FaPlus color='black' size={28} />
             </div>
           </Link>
 
-          <div>{errors}</div>
 
           <form className='signup-form'>
             <div id='login-circle'>
               <FaUserCircle size={65} />
             </div>
             <h3 id='create-acct'>Welcome back!</h3>
+            {errors.length ? (<p>{errors.join("\n")}</p>) : null}
             <input type="text" placeholder='username' value={this.state.username} onChange={this.handleInput('username')} />
             {/* <input type="email" placeholder='email' value={this.state.email} onChange={this.handleInput('email')} /> */}
             <input type="password" placeholder='password' value={this.state.password} onChange={this.handleInput('password')} />

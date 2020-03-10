@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
-import { NavBar } from './navbar'
 import { logout } from '../../actions/session_actions';
+import Mainpage from './mainpage';
 
 const msp = state => ({
-    currentUser: state.entities.users[state.session.id]
+  currentUser: state.entities.users[state.session.id]
 });
 
 const mdp = (dispatch) => ({
   logout: () => dispatch(logout())
 });
 
-export default connect(msp, mdp)(NavBar);
+const MainpageContainer = connect(msp, mdp)(Mainpage);
+export default MainpageContainer;

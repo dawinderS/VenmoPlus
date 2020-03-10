@@ -35,7 +35,7 @@ class SignupForm extends React.Component {
         <div className='signin-content'>
           <Link to='/'>
             <div className='logo-div'>
-              <img className="splashlogo1" src={window.logo1} />
+              <img className="splashlogo1" src={window.splashlogo} />
               <FaPlus color='black' size={28} />
             </div>
           </Link>

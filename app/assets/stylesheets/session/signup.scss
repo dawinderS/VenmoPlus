@@ -1,6 +1,6 @@
 #official-signup-div {
   display: flex;
-  background: #19a08e;
+  background: lightgray;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -11,12 +11,11 @@
 }
 
 .signin-content {
-  background: #19a08e;
+  background: lightgray;
   display: flex;
-  height: 770px;
   align-items: center;
   flex-direction: column;
-  height: 795px;
+  height: 755px;
 }
 
 .logo-div {
@@ -36,9 +35,9 @@
   justify-content: center;
   align-items: center;
   background: whitesmoke;
-  border-radius: 25px;
-  width: 430px;
-  height: 530px;
+  border-radius: 10px;
+  width: 400px;
+  height: 480px;
 }
 
 #login-circle {
@@ -50,15 +49,17 @@
   font-size: 25px;
   font-weight: bolder;
   letter-spacing: 1px;
+  margin-bottom: 35px;
+  margin-top: 5px;
 }
 
 .signup-form input {
   background: #dee2e5;
-  width: 48%;
-  height: 6%;
-  border-radius: 12px;
+  width: 50%;
+  height: 8%;
+  border-radius: 6px;
   border: none;
-  margin-top: 25px;
+  margin-top: 22px;
   font-size: 17px;
   font-weight: bolder;
   padding-left: 12px;
@@ -69,7 +70,7 @@
   cursor: pointer;
   width: 115px;
   height: 44px;
-  border-radius: 100px;
+  border-radius: 8px;
   background: #007f6e;
   display: flex;
   justify-content: center;
@@ -103,7 +104,7 @@
   cursor: pointer;
   width: 115px;
   height: 44px;
-  border-radius: 100px;
+  border-radius: 8px;
   background: #7e9daa;
   display: flex;
   justify-content: center;

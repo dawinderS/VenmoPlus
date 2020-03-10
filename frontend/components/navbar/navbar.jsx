@@ -6,14 +6,19 @@ import { FaPlus } from 'react-icons/fa';
 
 export const NavBar = ({ currentUser, logout }) => {
   const display = currentUser ? (
-    <div className='in-navbar'>
-      <p>Account</p>
-      <div className='logo-div'>
-        <img className="splashlogo" src={window.splashlogo} />
-        <Link to='/'></Link>
-        <FaPlus />
+    <div className='out-navbar'>
+      <div className='logo-menu'>
+        <div className='logo-menu-icon'>
+          <IoIosMenu size={26} />
+        </div>
+        <div className='logo-div'>
+          <img className="splashlogo" src={window.splashlogo} />
+          <Link to='/'></Link>
+          <FaPlus />
+        </div>
+        <button onClick={logout}>Log Out</button>
       </div>
-      <button onClick={logout}>Log Out</button>
+
     </div>
   ) : (
       <div className='out-navbar'>

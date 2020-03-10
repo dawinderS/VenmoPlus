@@ -42,13 +42,13 @@
   cursor: pointer;
   width: 115px;
   height: 38px;
-  border-radius: 100px;
+  border-radius: 8px;
   background: #007f6e;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: auto;
-  margin-right: 45px;
+  margin-right: 40px;
 }
 
 .splash-link-signup:hover {
@@ -67,9 +67,9 @@
 
 .splash-link-login {
   cursor: pointer;
-  width: 90px;
-  height: 36px;
-  border-radius: 100px;
+  width: 100px;
+  height: 38px;
+  border-radius: 8px;
   background: #7e9daa;
   display: flex;
   justify-content: center;
