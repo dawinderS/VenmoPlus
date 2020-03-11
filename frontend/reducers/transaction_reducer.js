@@ -6,7 +6,6 @@ import {
 const transactionReducer = ( state = {}, action ) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
-
   switch (action.type) {
     case RECEIVE_TRANSACTIONS:
       return Object.assign({}, action.transactions);

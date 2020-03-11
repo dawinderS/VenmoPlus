@@ -4,9 +4,9 @@ json.set! transaction.id do
   json.id transaction.id
   json.description transaction.description
 
-  if transaction.user == current_user || transaction.recipient == current_user
+  #if transaction.user.id === current_user.id || transaction.recipient.id === current_user.id
     json.amount transaction.amount
-  end
+  #end
 
   json.user do
     json.id transaction.user.id

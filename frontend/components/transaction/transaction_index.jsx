@@ -12,13 +12,14 @@ class TransactionIndex extends React.Component {
 
   render() {
     if (!this.props.transactions) return null
-    
+
     const transactions = this.props.transactions.map(transaction => (
       <TransactionIndexItem transaction={transaction} key={transaction.id} />
     ));
 
     return (
       <div>
+        <h1>Transactions</h1>
         <ul>{transactions}</ul>
       </div>
     )

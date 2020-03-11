@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarContainer from "../navbar/navbar_container";
-import TransactionIndex from '../transaction/transaction_index';
+import TransactionIndexContainer from '../transaction/transaction_index_container';
+import TransactionFormContainer from '../transaction/transaction_form_container';
 
 const Mainpage = ({ currentUser, logout, transactions, fetchTransactions }) => {
   return (
@@ -10,11 +11,10 @@ const Mainpage = ({ currentUser, logout, transactions, fetchTransactions }) => {
         <NavBarContainer />
       </div>
       <div className='mainpage-body'>
-        <div id='blahblah'>hello hi </div>
-
-        <div>
-          <div>hi</div>
-          <TransactionIndex transactions={transactions} fetchTransactions={fetchTransactions} />
+        <div className='mainpage-transactions'>
+          <h2>Transactions</h2>
+          <TransactionIndexContainer />
+          <TransactionFormContainer />
         </div>
       </div>
 

@@ -11,4 +11,5 @@ const mdp = (dispatch) => ({
 });
 
 
-export default connect(msp, mdp)(TransactionForm);
+const TransactionFormContainer = connect(msp, mdp)(TransactionForm);
+export default TransactionFormContainer;

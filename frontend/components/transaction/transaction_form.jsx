@@ -1,150 +1,108 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-import TransactionSearchContainer from '../transaction_search/transaction_search_container';
 
 class TransactionForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.transactions;
+    this.state = {
+      recipient: '', //this.props.user,
+      amount: '',
+      description: '',
+      errors: []
+    };
 
-    this.checkTransactionValidity = this.checkTransactionValidity.bind(this)
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.setRecipient = this.setRecipient.bind(this);
+
+    this.invalidTransactionInput = this.invalidTransactionInput.bind(this)
     this.validAmount = this.validAmount.bind(this);
+    // this.setRecipient = this.setRecipient.bind(this);
   }
 
   validAmount() {
-    (this.state.amount > 0 && typeof this.state.amount === 'number') ? true : false
+    if (this.state.amount > 0 || typeof this.state.amount === 'number') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
-  checkTransactionValidity() {
-    // console.log(this.state.amount.split(" ")[0].splice(1))
-    // const errs = merge([], this.state.errors);
-    const errs = [];
-    if (!this.state.recipient.username || !this.state.recipient.id) {
-      errs.push("Invalid recipient")
-    }
-    if (!this.state.amount) {
-      errs.push("amount can't be blank")
-    }
-    if (!this.validAmount()) {
-      errs.push("not a valid amount")
-    }
-    if (isNaN(this.state.amount)) {
-      errs.push("not a valid dollar amount")
-    }
-    if (!this.state.memo) {
-      errs.push("memo can't be blank")
-    }
-    if (errs.length > 0) {
-      this.setState({
-        errors: errs
-      });
-      return true
-    }
-    return false
+
+// can I do these errors elsewhere, how? trasaction_errors_reducer?
+  invalidTransactionInput() {
+    const errors = [];
+    if (!this.state.recipient.id) errors.push("invalid recipient");
+    if (!this.state.amount) errors.push("amount can't be blank");
+    if (!this.state.description) errors.push("must give description");
+    if (!this.validAmount()) errors.push("not a valid amount");
+    if (errors.length === 0) return false;
+
+    this.setState({ errors: errors });
+    return true;
   }
 
-  handleInput(e) {
-    const field = e.currentTarget.name;
-    this.setState( { [field]: e.currentTarget.value } );
-    if (field === "memo") {
-      this.setState({
-        "characters": e.currentTarget.value.length
-      })
+  handleInput(field) {
+    return (e) => {
+      this.setState({ [field]: e.target.value });
     }
+  }
+
+  setRecipient(user) {
+    this.setState({ recipient: { username: user.username, id: user.id } });
   }
 
   clearForm() {
     this.setState({
-      recipient: {
-        username: "",
-        id: null
-      },
-      amount: "",
-      memo: "",
-    });
-  }
-
-  setRecipient(user) {
-    this.setState({
-      recipient: {
-        username: user.username,
-        id: user.id
-      }
+      recipient: { username: '', id: null },
+      amount: '',
+      description: ''
     });
   }
 
   handleSubmit(e) {
     e.preventDefault()
-    const recipient_username = this.state.recipient.username;
-    const amount = this.state.amount;
-    const memo = this.state.memo;
-    const visibility = this.state.visibility;
-    const newTransaction = { memo, amount, recipient_username, visibility }
-    if (this.checkTransactionValidity() === true) {
-      this.setState({
-        showErrors: {}
-      });
+  
+    if (this.invalidTransactionInput()) {
       console.log(this.state.errors)
     } else {
-      this.props.createTransaction(newTransaction).then(
-        () => {
-          this.clearForm();
-          this.props.closeModal();
-        }
+      this.props.createTransaction(transaction).then(
+        () => { this.clearForm() } 
       );
       this.clearForm();
     }
   }
 
-  // <div className={this.checkTransactionValidity()}></div>
   render() {
     return (
       <div id="transaction-form">
-        <form>
-          <ul className="form-errors" style={this.state.showErrors}>
+        <form className='transaction-form'>
+          <ul className='transaction-form-errors'>
             {this.state.errors.map((err, i) => (
-              <li key={i} className="error">{err}</li>
+              <li className='transaction-error' key={i}>{err}</li>
             ))}
           </ul>
-          <div className="form-fields">
-            <div className="form-top">
-              <div className="amount-to-pay">
-                <div className="dollar">$</div>
-                <input
-                  name="amount"
-                  onChange={this.handleInput}
-                  placeholder="Amount"
-                  type="search"
-                  value={this.state.amount}
-                  onFocus={this.showForm} />
+          <div className="form-inputs">
+            <div className="form-main">
+              <div className='form-amount'>
+                <input type="number"
+                  onChange={this.handleInput('amount')}
+                  placeholder="0.00"
+                  value={this.state.amount} />
               </div>
-              <TransactionSearchContainer recipient={this.state.recipient} setRecipient={this.setRecipient} />
+              <div className='form-recipient'>
+
+              </div>
             </div>
-            <div className="memo">
-              <textarea name="memo" id="transaction-memo"
-                placeholder="for ice-cream!"
-                value={this.state.memo}
-                onChange={this.handleInput}></textarea>
-              <div className="memo-bottom">
-                <div className="select-visibility">
-                  <div className="character-count">
-                    {this.state.characters}
-                  </div>
-                  <select name="visibility" value={this.state.visibility} onChange={this.handleInput}>
-                    <option>Friends</option>
-                    <option>Private</option>
-                  </select>
-                  <div className="spacer">
-                  </div>
-                </div>
-                <button onClick={this.handleSubmit} className="submit-transaction">Pay</button>
-              </div>
+            <div className="transaction-description">
+              <textarea id="transaction-des"
+                placeholder="for pizza!"
+                value={this.state.description}
+                onChange={this.handleInput('description')}>
+              </textarea>
             </div>
           </div>
+          <button id='transaction-form-button' onClick={this.handleSubmit} >Pay</button>
         </form>
       </div>
     );

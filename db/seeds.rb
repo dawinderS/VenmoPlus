@@ -16,8 +16,8 @@ user4 = User.create(username: 'karl', email: 'karl@g.com', password: 'password',
 
 Transaction.destroy_all
 
-transaction = Transaction.new(user_id: user1.id, recipient_id: user2.id, amount: 20.50, description: 'for that pizza', complete: false)
-transaction1 = Transaction.new(user_id: user2.id, recipient_id: user1.id, amount: 10.00, description: 'dessert!!', complete: false)
+transaction = Transaction.create(user_id: user1.id, recipient_id: user2.id, amount: 20.50, description: 'for that pizza', complete: false)
+transaction1 = Transaction.create(user_id: user2.id, recipient_id: user1.id, amount: 10.00, description: 'dessert!!', complete: false)
 
 
 Friendship.destroy_all

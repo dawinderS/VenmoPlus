@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchTransactions, clearTransactions } from '../../actions/transactions_actions';
+import { fetchTransactions, clearTransactions } from '../../actions/transaction_actions';
 import TransactionIndex from './transaction_index';
 
 const msp = state => ({
@@ -11,4 +11,5 @@ const mdp = dispatch => ({
   clearTransactions: () => dispatch(clearTransactions())
 })
 
-export default connect(msp, mdp)(TransactionIndex);
+const TransactionIndexContainer = connect(msp, mdp)(TransactionIndex);
+export default TransactionIndexContainer;
