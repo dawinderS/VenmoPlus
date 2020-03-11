@@ -90,9 +90,12 @@ class TransactionForm extends React.Component {
                   placeholder="0.00"
                   value={this.state.amount} />
               </div>
-              <div className='form-recipient'>
-
-              </div>
+              {/* <div className='form-recipient'>
+                <input type="text"
+                  onChange={this.handleInput('recipient')}
+                  placeholder="paying who?"
+                  value={this.state.recipient} />
+              </div> */}
             </div>
             <div className="transaction-description">
               <textarea id="transaction-des"

@@ -19,7 +19,6 @@ class TransactionIndex extends React.Component {
 
     return (
       <div>
-        <h1>Transactions</h1>
         <ul>{transactions}</ul>
       </div>
     )

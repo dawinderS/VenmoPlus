@@ -1,12 +1,13 @@
 .mainpage {
   display: flex;
+  flex-direction: column;
   // justify-content: center;
   // align-items: center;
   
 }
 
-#blahblah {
-  margin-top: 100px;
+.mainpage-body {
+  margin-top: 70px;
 }
 
 

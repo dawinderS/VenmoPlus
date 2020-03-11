@@ -30,6 +30,20 @@
 
 .logo-menu-icon {
   padding-right: 22px;
+  position: relative;
+  display: inline-block;  
+}
+
+.logo-menu-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  z-index: 1;
+  width: 120px;
+}
+
+.logo-menu-icon:hover .logo-menu-content {
+  display: block;
 }
 
 .splashlogo {

@@ -15,6 +15,106 @@
   display: block;
   max-width: 100%;
 }
+.footer-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  // align-items: center;
+}
+
+.footer {
+  height: 280px;
+  background: white;
+  display: flex;
+  align-items: flex-start; ;
+  justify-content: flex-start;
+  border-top: 1px solid rgba(0, 0, 0, 0.068);
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+#splash-apple-logo {
+  height: 39px;
+  width: 116.3px;
+  margin-top: 58px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#splash-android-logo {
+  height: 54.18px;
+  width: 140px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.footer .footer1 {
+  margin-top: 30px;
+}
+
+.footer1 div {
+  cursor: pointer;
+  margin-bottom: 7px;
+  color: rgb(100, 100, 100);
+  margin-right: 77px;
+}
+
+.below-footer {
+  // display: flex;
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-bottom: 50px;
+}
+
+.below-footer div {
+  color: rgb(100, 100, 100);
+  white-space: normal;
+  line-height: 25px;
+  // margin-top: 40px;
+}
+
+#footer-replace {
+  display: flex;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 70px;
+  margin-top: 10px;
+  justify-content: flex-start;
+  border-top: 1px solid rgba(0, 0, 0, 0.068);
+}
+#footer-replace div {
+  margin-top: 50px;
+}
+#footer-help0 {
+  color: rgb(100, 100, 100);
+}
+#footer-help {
+  margin-left: auto;
+  margin-right: 35px;
+  color: #026457;
+  cursor: pointer;
+}
+#footer-help2 {
+  cursor: pointer;
+  color: #026457;
+}
+
+
+@media screen and (min-width: 790.1px) {
+  #footer-replace {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .footer-holder {
+    display: none;
+  }
+  .below-footer {
+    display: none;
+  }
+}
+
 
 // .splash-phones {
 //   display: flex;

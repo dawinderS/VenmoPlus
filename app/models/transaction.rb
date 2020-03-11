@@ -21,5 +21,4 @@ class Transaction < ApplicationRecord
     foreign_key: :recipient_id,
     class_name: :User
 
-
 end

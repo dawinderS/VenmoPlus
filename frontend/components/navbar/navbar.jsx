@@ -25,6 +25,13 @@ export const NavBar = ({ currentUser, logout }) => {
         <div className='logo-menu'>
           <div className='logo-menu-icon'>
             <IoIosMenu size={26} />
+            <div className='logo-menu-content'>
+              <p>What's New</p>
+              <p>How Venmo Works</p>
+              <p>Business</p>
+              <p>Security</p>
+              <p>Contact Us</p>
+            </div>
           </div>
           <div className='logo-div'>
             <img className="splashlogo" src={window.splashlogo} />

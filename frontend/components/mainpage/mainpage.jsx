@@ -11,10 +11,13 @@ const Mainpage = ({ currentUser, logout, transactions, fetchTransactions }) => {
         <NavBarContainer />
       </div>
       <div className='mainpage-body'>
+        <div className='mainpage-create'>
+          <h2>Make payment</h2>
+          <TransactionFormContainer />
+        </div>
         <div className='mainpage-transactions'>
           <h2>Transactions</h2>
           <TransactionIndexContainer />
-          <TransactionFormContainer />
         </div>
       </div>
 

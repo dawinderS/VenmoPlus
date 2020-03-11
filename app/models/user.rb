@@ -42,6 +42,16 @@ class User < ApplicationRecord
   has_many :sent_transactions,
     foreign_key: :user_id,
     class_name: :Transaction
+
+  has_many :requests
+
+  has_many :received_requests,
+    foreign_key: :payer_id,
+    class_name: :Request
+
+  has_many :sent_requests,
+    foreign_key: :user_id,
+    class_name: :Request
   
 
   def self.find_by_credentials(username, email, password)

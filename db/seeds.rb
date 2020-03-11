@@ -19,6 +19,10 @@ Transaction.destroy_all
 transaction = Transaction.create(user_id: user1.id, recipient_id: user2.id, amount: 20.50, description: 'for that pizza', complete: false)
 transaction1 = Transaction.create(user_id: user2.id, recipient_id: user1.id, amount: 10.00, description: 'dessert!!', complete: false)
 
+Request.destroy_all
+
+request = Request.create(user_id: user1.id, payer_id: user4.id, amount: 5.00, description: 'chips', complete: false)
+request = Request.create(user_id: user2.id, payer_id: user3.id, amount: 15.00, description: 'movie night', complete: false)
 
 Friendship.destroy_all
 
