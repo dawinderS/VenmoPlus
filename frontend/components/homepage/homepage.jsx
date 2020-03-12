@@ -13,14 +13,17 @@ class Homepage extends React.Component {
         <NavBarContainer />
         <div className='mid-splash'>
           <img className='splashbackground' src={window.splash3} />
-          <div className='splash-info1'>
+          {/* <div className='splash-info1'>
             <h3>The future of payments</h3>
             <p></p>
-          </div>
+          </div> */}
           <img className='splashbackground2' src={window.splash1} />
         </div>
         <div className='splash-info2'>
-          <h2>part 2</h2>
+          <h2>A New Venmo</h2>
+          <video className='splash-video' controls>
+            <source src="venmo_movie.mp4" type="video/mp4" ></source>
+          </video>
         </div>
         <div className='footer-holder'>  
           <div className='footer'>

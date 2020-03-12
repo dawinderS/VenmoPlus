@@ -1,34 +1,29 @@
 class Api::FriendshipsController < ApplicationController
 
   def create
-    @already_friends = Friendship.find_by(user_id: params[:id], friend_id: current_user.id)
-    
-    if @already_friends
-        Friendship.find_by(user_id: params[:id], friend_id: current_user.id).destroy
-        Friendship.create(user_id: params[:id], friend_id: current_user.id, accepted: true)
-        @friendship = current_user.friendships.create(friend_id: params[:id], accepted: true)
+    friend = User.find(params[:user_id])
+    @user = current_user
+    if Friendship.request_friend(@user, friend)
+      render 'api/users/show'
     else
-        @friendship = current_user.friendships.create(friend_id: params[:id])
-    end
+      render json: ['Sorry.. something went wrong']
+  end
 
-    if @friendship.save
-        render :show
-    else
-        render json: ["Unable to establish friendship"], status: 422
-    end
+  def update
+    friend = User.find(params[:id])
+    @user = current_user
+    Friendship.accept_both(@user, friend)
+    render 'api/users/show'
   end
 
   def destroy
-    @were_friends = Friendship.find_by(user_id: params[:id], friend_id: current_user.id)
-    
-    if @were_friends
-        Friendship.find_by(user_id: params[:id], friend_id: current_user.id).destroy
-        Friendship.create(user_id: params[:id], friend_id: current_user.id, accepted: false)
-    end
-
-    @friendship = current_user.friendships.find_by(friend_id: params[:id])
-    @friendship.destroy
-    render :show
+   friend = User.find(params[:id])
+   @user = current_user
+   delete_both = @user.friends.delete(friend) && friend.friends.delete(@user)
+   if delete_both
+    render 'api/users/show'
+   else
+    render json: @users.errors.full_messages, status: 422
   end
   
 end

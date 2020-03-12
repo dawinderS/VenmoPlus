@@ -1,20 +1,20 @@
 // fetchAll, fetchOne, createOne
 
-export function fetchTransactions() {
+export const fetchTransactions = () => {
   return $.ajax({
     url: '/api/transactions',
     method: 'GET'
   });
 }
 
-export function fetchTransaction(transactionId) {
+export const fetchTransaction = (transactionId) => {
   return $.ajax({
     url: `api/transactions/${transactionId}`,
     method: 'GET'
   });
 }
 
-export function createTransaction(transaction) {
+export const createTransaction = (transaction) => {
   return $.ajax({
     url: 'api/transactions',
     method: 'POST',
@@ -22,7 +22,7 @@ export function createTransaction(transaction) {
   });
 }
 
-// export function fetchUserTransactions(user_id) {
+// export const fetchUserTransactions = (user_id) => {
 //   return $.ajax({
 //     url: `/api/users/${user_id}/transactions`,
 //     method: 'GET'

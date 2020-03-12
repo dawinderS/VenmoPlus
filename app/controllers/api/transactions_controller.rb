@@ -1,22 +1,25 @@
 class Api::TransactionsController < ApplicationController
 
   def create
-    @transaction = current_user.transactions.new(transaction_params)
-
+    @transaction = Transaction.new(transaction_params)
+    
+    recipient = User.find_by(username: params[:transaction][:recipient])
+    @transaction.recipient_id = recipient.id
+    
     if @transaction.save
       amt = @transaction.amount
-      recipient = User.find_by(id: params[:transaction][:recipient_id])
       recipient.update(venmo_credit: recipient.venmo_credit + amt)
+
       if current_user.venmo_credit < amt
         current_user.update(venmo_credit: 0)
       else
         current_user.update(venmo_credit: current_user.venmo_credit - amt)
       end
+
       render '/api/transactions/show'
     else
-      render json: @transactions.errors.full_messages, status: 401
+      render json: @transaction.errors.full_messages, status: 401
     end
-
   end
 
   def index

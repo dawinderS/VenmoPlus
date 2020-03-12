@@ -1,8 +1,10 @@
 class Api::RequestsController < ApplicationController
 
   def create
-    @request = current_user.requests.new(request_params)
+    @request = Request.new(request_params)
 
+    payer = User.find_by(username: params[:request][:payer])
+    @request.payer_id = payer.id
     if @request.save
       amt = @request.amount
       payer = User.find_by(id: params[:request][:payer_id])

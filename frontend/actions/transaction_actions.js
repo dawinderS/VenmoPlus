@@ -10,10 +10,12 @@ const receiveTransactions = transactions => ({
   transactions
 });
 
-const receiveTransaction = transaction => ({
-  type: RECEIVE_TRANSACTION,
-  transaction
-});
+const receiveTransaction = transaction => {
+  return ({
+    type: RECEIVE_TRANSACTION,
+    transaction
+  })
+};
 
 const receiveTransactionErrors = errors => ({
   type: RECEIVE_TRANSACTION_ERRORS,

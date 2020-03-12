@@ -1,11 +1,14 @@
 import { combineReducers } from 'redux';
 
-import usersReducer from './users_reducer';
+import userReducer from './user_reducer';
 import transactionReducer from './transaction_reducer';
+import requestReducer from './request_reducer';
+
 
 const entitiesReducer = combineReducers({
-  users: usersReducer,
-  transactions: transactionReducer
+  users: userReducer,
+  transactions: transactionReducer,
+  requests: requestReducer
 });
 
 export default entitiesReducer;

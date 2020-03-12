@@ -22,7 +22,10 @@ transaction1 = Transaction.create(user_id: user2.id, recipient_id: user1.id, amo
 Request.destroy_all
 
 request = Request.create(user_id: user1.id, payer_id: user4.id, amount: 5.00, description: 'chips', complete: false)
-request = Request.create(user_id: user2.id, payer_id: user3.id, amount: 15.00, description: 'movie night', complete: false)
+request1 = Request.create(user_id: user2.id, payer_id: user3.id, amount: 15.00, description: 'movie night', complete: false)
 
 Friendship.destroy_all
+
+friendship = Friendship.create(user_id: user1.id, friend_id: user2.id)
+friendship1 = Friendship.create(user_id: user2.id, friend_id: user3.id)
 

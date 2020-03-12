@@ -4,20 +4,13 @@ import { Link, withRouter } from 'react-router';
 class TransactionForm extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      recipient: '', //this.props.user,
-      amount: '',
-      description: '',
-      errors: []
-    };
+    this.state = this.props.transaction;
 
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.invalidTransactionInput = this.invalidTransactionInput.bind(this)
     this.validAmount = this.validAmount.bind(this);
-    // this.setRecipient = this.setRecipient.bind(this);
   }
 
   validAmount() {
@@ -28,18 +21,14 @@ class TransactionForm extends React.Component {
     }
   }
 
-
 // can I do these errors elsewhere, how? trasaction_errors_reducer?
   invalidTransactionInput() {
     const errors = [];
-    if (!this.state.recipient.id) errors.push("invalid recipient");
+    // if (!this.state.recipient_id) errors.push("invalid recipient");
     if (!this.state.amount) errors.push("amount can't be blank");
     if (!this.state.description) errors.push("must give description");
     if (!this.validAmount()) errors.push("not a valid amount");
     if (errors.length === 0) return false;
-
-    this.setState({ errors: errors });
-    return true;
   }
 
   handleInput(field) {
@@ -48,13 +37,10 @@ class TransactionForm extends React.Component {
     }
   }
 
-  setRecipient(user) {
-    this.setState({ recipient: { username: user.username, id: user.id } });
-  }
-
   clearForm() {
     this.setState({
-      recipient: { username: '', id: null },
+      user_id: '',
+      recipient: '',
       amount: '',
       description: ''
     });
@@ -62,14 +48,19 @@ class TransactionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-  
+
+    const transaction = {
+      user_id: this.props.currentUserId,
+      recipient: this.state.recipient,
+      amount: this.state.amount,
+      description: this.state.description
+    };
     if (this.invalidTransactionInput()) {
       console.log(this.state.errors)
     } else {
       this.props.createTransaction(transaction).then(
         () => { this.clearForm() } 
       );
-      this.clearForm();
     }
   }
 
@@ -77,25 +68,19 @@ class TransactionForm extends React.Component {
     return (
       <div id="transaction-form">
         <form className='transaction-form'>
-          <ul className='transaction-form-errors'>
-            {this.state.errors.map((err, i) => (
-              <li className='transaction-error' key={i}>{err}</li>
-            ))}
-          </ul>
+          <div>{this.invalidTransactionInput()}</div>
           <div className="form-inputs">
-            <div className="form-main">
-              <div className='form-amount'>
-                <input type="number"
-                  onChange={this.handleInput('amount')}
-                  placeholder="0.00"
-                  value={this.state.amount} />
-              </div>
-              {/* <div className='form-recipient'>
-                <input type="text"
-                  onChange={this.handleInput('recipient')}
-                  placeholder="paying who?"
-                  value={this.state.recipient} />
-              </div> */}
+            <div className='form-amount'>
+              <input type="pay-amount"
+                onChange={this.handleInput('amount')}
+                placeholder="0.00"
+                value={this.state.amount} />
+            </div>
+            <div className='recipient-div'>
+              <input type="text" 
+                placeholder='username'
+                value={this.state.recipient}
+                onChange={this.handleInput('recipient')} />
             </div>
             <div className="transaction-description">
               <textarea id="transaction-des"
@@ -105,7 +90,7 @@ class TransactionForm extends React.Component {
               </textarea>
             </div>
           </div>
-          <button id='transaction-form-button' onClick={this.handleSubmit} >Pay</button>
+          <button className='transaction-form-button' onClick={(e) =>this.handleSubmit(e)} >Pay</button>
         </form>
       </div>
     );
