@@ -5,9 +5,9 @@ class Api::RequestsController < ApplicationController
 
     payer = User.find_by(username: params[:request][:payer])
     @request.payer_id = payer.id
+
     if @request.save
       amt = @request.amount
-      payer = User.find_by(id: params[:request][:payer_id])
       current_user.update(venmo_credit: current_user.venmo_credit + amt)
       if payer.venmo_credit < amt
         payer.update(venmo_credit: 0)
@@ -16,7 +16,7 @@ class Api::RequestsController < ApplicationController
       end
       render '/api/requests/show'
     else
-      render json: @requests.errors.full_messages, status: 401
+      render json: @request.errors.full_messages, status: 401
     end
   end
 

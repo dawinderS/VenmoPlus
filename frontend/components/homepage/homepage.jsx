@@ -21,7 +21,7 @@ class Homepage extends React.Component {
         </div>
         <div className='splash-info2'>
           <h2>A New Venmo</h2>
-          <video className='splash-video' controls>
+          <video className='splash-video' controls autoPlay muted>
             <source src="venmo_movie.mp4" type="video/mp4" ></source>
           </video>
         </div>

@@ -39,7 +39,19 @@
   position: absolute;
   background-color: white;
   z-index: 1;
-  width: 120px;
+  width: 200px;
+  margin-right: 45px;
+  height: max-content;
+  border-radius: 10px;
+  left: -20px;
+  border: 1px solid whitesmoke;
+  opacity: 0.9;
+}
+
+.logo-menu-content p {
+  margin-left: 25px;
+  // color: rgb(100, 100, 100);
+  color: #026457;
 }
 
 .logo-menu-icon:hover .logo-menu-content {

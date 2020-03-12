@@ -8,10 +8,9 @@ const requestReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_REQUESTS:
-      return Object.assign({}, action.requests);
+      return action.requests;
     case RECEIVE_REQUEST:
-      nextState[action.request.id] = action.request
-      return nextState;
+      return action.request
     default:
       return state;
   }
