@@ -7,6 +7,7 @@ class Api::FriendshipsController < ApplicationController
       render 'api/users/show'
     else
       render json: ['Sorry.. something went wrong']
+    end
   end
 
   def update
@@ -24,6 +25,7 @@ class Api::FriendshipsController < ApplicationController
     render 'api/users/show'
    else
     render json: @users.errors.full_messages, status: 422
+   end
   end
   
 end
