@@ -98,17 +98,21 @@
 }
 
 .form-amount input {
-  text-align: right;
+  text-align: center;
   outline: none;
   border-top: none;
   border-right: none;
   border-left: none;
   border-bottom: none;
   // border-bottom: 2px solid #545d66;
-  width: 190px;
+  width: 180px;
   height: 60px;
   font-size: 40px;
   font-weight: bolder;
   color: #545d66;
-  
+  // margin-right: 10px;
+}
+
+.trans-errors {
+  color: #545d66;
 }

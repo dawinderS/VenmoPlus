@@ -11,7 +11,7 @@ const TransactionIndexItem = ({ transaction }) => {
             <img className='trans-logo-pic' src="profile-logo.png" />
             <div className='trans-descr'>
               <div className='transaction-users'>
-                <strong>You</strong> 
+                <strong>you</strong> 
                 <div>paid</div> 
                 <strong>{transaction.recipient.username}</strong>
               </div>

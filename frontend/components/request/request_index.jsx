@@ -18,8 +18,11 @@ class RequestIndex extends React.Component {
     ));
 
     return (
-      <div>
-        <ul>{requests}</ul>
+      <div className='requests-feed'>
+        <div className='trans-nav'>
+          <strong>Pending Requests</strong>
+        </div>
+        <div>{requests}</div>
       </div>
     )
   }

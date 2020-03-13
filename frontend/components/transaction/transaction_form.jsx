@@ -69,8 +69,8 @@ class TransactionForm extends React.Component {
       <div className='trans-top'>
         <div className="all-trans-form1">
           <div className='trans-form1'>
-            <div>{this.invalidTransactionInput()}</div>
             <div className="form-inputs">
+            <div className='trans-errors'>{this.invalidTransactionInput()}</div>
               <div className='recipient-div'>
                 <input type="text"
                   placeholder='username'

@@ -34,9 +34,10 @@ const Mainpage = ({ currentUser, logout, transactions, fetchTransactions }) => {
                 <div>{currentUser.username}</div>
               </div>
               <div className='user-credit'>${currentUser.venmoCredit}</div>
+              <div>Friends</div>
             </div>
           </div>
-          <div>Pending Requests
+          <div className='mainpage-req'>
             <RequestIndexContainer />
           </div>
         </div>
