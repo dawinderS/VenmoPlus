@@ -3,7 +3,8 @@ import { fetchTransactions, clearTransactions } from '../../actions/transaction_
 import TransactionIndex from './transaction_index';
 
 const msp = state => ({
-  transactions: Object.values(state.entities.transactions)
+  transactions: Object.values(state.entities.transactions),
+  currentUser: state.entities.users[state.session.id]
 })
 
 const mdp = dispatch => ({

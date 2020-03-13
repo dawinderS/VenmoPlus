@@ -66,32 +66,40 @@ class TransactionForm extends React.Component {
 
   render() {
     return (
-      <div id="transaction-form">
-        <form className='transaction-form'>
-          <div>{this.invalidTransactionInput()}</div>
-          <div className="form-inputs">
-            <div className='form-amount'>
-              <input type="pay-amount"
-                onChange={this.handleInput('amount')}
-                placeholder="0.00"
-                value={this.state.amount} />
+      <div className='trans-top'>
+        <div className="all-trans-form1">
+          <div className='trans-form1'>
+            <div>{this.invalidTransactionInput()}</div>
+            <div className="form-inputs">
+              <div className='recipient-div'>
+                <input type="text"
+                  placeholder='username'
+                  value={this.state.recipient}
+                  onChange={this.handleInput('recipient')} />
+              </div>
+              <div className="transaction-description">
+                <input id="transaction-des"
+                  placeholder="What's it for?"
+                  value={this.state.description}
+                  onChange={this.handleInput('description')}>
+                </input>
+              </div>
             </div>
-            <div className='recipient-div'>
-              <input type="text" 
-                placeholder='username'
-                value={this.state.recipient}
-                onChange={this.handleInput('recipient')} />
-            </div>
-            <div className="transaction-description">
-              <textarea id="transaction-des"
-                placeholder="for pizza!"
-                value={this.state.description}
-                onChange={this.handleInput('description')}>
-              </textarea>
+            <div className='trans-form2'>
+              <div className='form-amount'>
+                <input type="pay-amount"
+                  onChange={this.handleInput('amount')}
+                  placeholder="$0"
+                  value={this.state.amount} />
+              </div>
             </div>
           </div>
-          <button className='transaction-form-button' onClick={(e) =>this.handleSubmit(e)} >Pay</button>
-        </form>
+        </div>
+        <div className='trans-nav'>
+          <strong className='transaction-form-btn2' onClick={(e) => this.handleSubmit(e)} >Pay</strong>
+          <div className='trans-nav-mid'></div>
+          <strong className='transaction-form-button' onClick={(e) => this.handleSubmit(e)} >Request</strong>
+        </div>
       </div>
     );
   }

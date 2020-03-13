@@ -1,0 +1,152 @@
+.trans-feed {
+  // border: 1px solid #e7ebee;
+  background-color: white;
+}
+
+.trans-nav {
+  background: #0aa18d;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.trans-nav button {
+  margin-left: 15px;
+  padding: 5px;
+  border-radius: 50px;
+  text-align: center;
+  width: 70px;
+  color: #626d76;
+  outline: none;
+  cursor: pointer;
+}
+
+#first-nav-btn {
+  margin-left: 200px;
+}
+
+.trans-nav button:hover {
+  background: #02685a;
+  color: white;
+}
+
+.transaction-index {
+  display: flex;
+  // justify-content: center;
+  flex-direction: column;
+  border-bottom: 8px solid #f0eded;
+  border-bottom-left-radius: 100px;
+  padding: 25px;
+  width: 580px;
+  height: 210px;
+}
+
+.trans-summary {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 55%;
+}
+
+.trans-logo-pic {
+  width: 65px;
+  height: 65px;
+  padding-right: 10px;
+}
+
+.trans-descr {
+  display: flex;
+  flex-direction: column;
+  width: 402px;
+}
+
+.trans-descr strong {
+  color: #545d66;
+  font-weight: 700;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 22px;
+}
+
+.transaction-users {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.transaction-users div {
+  color: #6a757f;
+  font-size: 20px;
+}
+
+.transaction-date {
+  color: #6a757f;
+  font-size: 13px;
+  line-height: 16px;
+  padding-left: 8px;
+}
+
+.transaction-description {
+  color: #262626;
+  padding-left: 8px;
+  font-size: 27px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  width: 402px;
+}
+
+.trans-amount {
+  display: flex;
+  justify-content: flex-end;
+  width: 80px;
+  color: #d0011b;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+.trans-like-btn {
+  display: flex;
+  padding-left: 55px;
+  align-items: center;
+}
+
+.trans-heart-btn {
+  color: #6a757f;
+}
+
+.trans-heart-btn:hover {
+  color: #d0011b;
+}
+
+.trans-heart-btn:focus {
+  color: #d0011b;
+}
+
+
+.trans-cmt-text {
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 8px;
+  font-size: 13px;
+  color: #6a757f;
+  width: 472px;;
+}
+
+.transaction-comment {
+  padding-top: 15px;
+  margin-left: 82px;
+}
+
+.transaction-comment input {
+  outline: none;
+  height: 27px;
+  width: 460px;
+  padding-left: 8px;
+}
+// .trans-amount {
+//   margin: auto;
+// }

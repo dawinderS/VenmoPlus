@@ -1,24 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Route } from "react-router-dom";
-import { IoIosMenu } from 'react-icons/io';
+import { IoIosMenu, IoMdSearch } from 'react-icons/io';
 import { FaPlus } from 'react-icons/fa';
 
 export const NavBar = ({ currentUser, logout }) => {
   const display = currentUser ? (
-    <div className='out-navbar'>
-      <div className='logo-menu'>
-        <div className='logo-menu-icon'>
-          <IoIosMenu size={26} />
-        </div>
+    <div className='in-navbar'>
+      <div className='logo-menu1'>
         <div className='logo-div'>
-          <img className="splashlogo" src={window.splashlogo} />
+          <img className="splashlogo" src={window.logo1} />
           <Link to='/'></Link>
-          <FaPlus />
+          <FaPlus color='white' />
         </div>
-        <button onClick={logout}>Log Out</button>
+        <div className='nav-search-bar'>
+          <input className='nav-search' type="search" placeholder='Search people' />
+          <div className='nav-search-icon'><IoMdSearch /></div>
+        </div>
+        <Link className='nav-home-link' to='/'><div>Home</div></Link>
       </div>
-
+      <div className='nav-left-side'>
+        <span className='nav-user-link'>{currentUser.username}</span>
+        <div>Statement</div>
+        <div>Settings</div>
+        <div>Help</div>
+        <div onClick={logout}>Log Out</div>
+      </div>
     </div>
   ) : (
       <div className='out-navbar'>

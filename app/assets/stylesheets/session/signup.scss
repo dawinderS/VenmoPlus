@@ -1,9 +1,10 @@
 #official-signup-div {
   display: flex;
-  background: lightgray;
+  background: #fafafa;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 1000px;
 }
 
 #space-creator {
@@ -11,11 +12,11 @@
 }
 
 .signin-content {
-  background: lightgray;
+  background: #fafafa;
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 755px;
+  height: 100%;
 }
 
 .logo-div {
@@ -34,8 +35,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: whitesmoke;
-  border-radius: 10px;
+  background: white;
+  border-radius: 2px;
   width: 400px;
   height: 480px;
 }

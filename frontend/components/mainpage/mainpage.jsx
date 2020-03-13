@@ -12,15 +12,33 @@ const Mainpage = ({ currentUser, logout, transactions, fetchTransactions }) => {
         <NavBarContainer />
       </div>
       <div className='mainpage-body'>
-        <div className='mainpage-create'>
-          <h2>Make payment</h2>
-          <TransactionFormContainer />
+        <div className='mainpage-col1'>
+          <div className='mainpage-create-trans'>
+            <TransactionFormContainer />
+          </div>
+          {/* <div className='mainpage-incomplete-trans'>
+          </div> */}
+          <div className='mainpage-trans'>
+            <TransactionIndexContainer />
+          </div>
         </div>
-        <div className='mainpage-transactions'>
-          <h2>Transactions</h2>
-          <TransactionIndexContainer />
-          <h2>Requests</h2>
-          <RequestIndexContainer />
+        <div className='user-all'>
+          <div className='trans-nav'>
+            <strong>User Profile</strong>
+            
+          </div>
+          <div className='mainpage-col2'>
+            <div className='mainpage-user-prof'>
+              <div className='user-prof-1'>
+                <img className='trans-logo-pic' src="profile-logo.png" />
+                <div>{currentUser.username}</div>
+              </div>
+              <div className='user-credit'>${currentUser.venmoCredit}</div>
+            </div>
+          </div>
+          <div>Pending Requests
+            <RequestIndexContainer />
+          </div>
         </div>
       </div>
 

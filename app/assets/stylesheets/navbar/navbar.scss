@@ -4,10 +4,96 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 70px;
-  max-height: 70px;
-  background: #fff;
-  border-bottom: 1px solid #ededed;
+  min-height: 60px;
+  max-height: 60px;
+  background: #0aa18d;
+  // border-bottom: 1px solid #ededed;
+}
+
+.nav-search-bar {
+  display: flex;
+  margin-left: 30px;
+  height: 25px;
+  width: 220px;
+  position: relative;
+}
+
+.nav-search {
+  outline: none;
+  height: 100%;
+  border: none;
+  width: 100%;
+  padding-left: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.nav-search-icon {
+  position: absolute;
+  left: 197px;
+  top: 5px
+}
+
+.nav-left-side {
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  // justify-content: space-evenly;
+  height: 100%;
+}
+
+.nav-left-side div {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  height: 53px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.nav-home-link {
+  text-decoration: none;
+}
+
+.nav-home-link div {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  // font-weight: bolder;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  height: 53px;
+}
+
+.nav-home-link div:hover {
+  background-color: #17b8a2;
+}
+
+.nav-user-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 17px;
+  font-weight: bolder;
+  padding-left: 18px;
+  padding-right: 18px;
+  cursor: pointer;
+  height: 53px;
+}
+
+.nav-left-side div:hover {
+  background-color: #17b8a2;
+}
+
+.nav-user-link:hover {
+  background-color: #17b8a2;
 }
 
 .out-navbar {
@@ -28,11 +114,26 @@
   padding-left: 37px;
 }
 
+.logo-menu1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding-left: 37px;
+  margin-right: 100px;
+  margin-left: 10px;
+}
+
 .logo-menu-icon {
   padding-right: 22px;
   position: relative;
   display: inline-block;  
 }
+
+// .logo-div {
+//   display: flex;
+//   align-items: center;
+// }
 
 .logo-menu-content {
   display: none;
@@ -45,17 +146,26 @@
   border-radius: 10px;
   left: -20px;
   border: 1px solid whitesmoke;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .logo-menu-content p {
-  margin-left: 25px;
+  padding-left: 25px;
   // color: rgb(100, 100, 100);
   color: #026457;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 0;
+  border: 0;
 }
 
 .logo-menu-icon:hover .logo-menu-content {
   display: block;
+}
+
+.logo-menu-content p:hover {
+  background: #0aa18d;
+  color: #fff;
 }
 
 .splashlogo {
