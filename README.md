@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# VenmoClone - Uome
+# VenmoClone - Venmo+
 =======
 # README
 
