@@ -15,7 +15,7 @@ class Api::TransactionsController < ApplicationController
       else
         current_user.update(venmo_credit: current_user.venmo_credit - amt)
       end
-
+      
       render '/api/transactions/show'
     else
       render json: @transaction.errors.full_messages, status: 401
