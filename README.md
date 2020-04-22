@@ -2,13 +2,23 @@
 
 [Visit Venmo+ Now](https://venmo-clone.herokuapp.com/)
 
-Venmo+ is a digital wallet service in which you can make and share payments with your friends, as well as view your and your friends' transaction histories.
+Venmo+ is a single-page web application, inspired by Venmo, that serves as a digital wallet where you can make and share payments with your friends, as well as view your and your friends' transaction histories. It is created with Ruby on Rails, React.js/Redux, and PostgreSQL with a focus on a more user-friendly functionality and modern touch in regards to design.
 
-More features will be added over time
+More features will be added over time.
+
+## Table of Contents
+- [Technologies](#technologies-used)
+- [Features](#features)
+  - User auth
+  - Making payment
+  - Adding friends
+  - Viewing transaction histories
+  - Liking payments
+- [Future Plans](#future-plans)
 
 ## Technologies Used
-Venmo+ was built using:
-- Ruby on Rails
+Venmo+ is built using:
+- Rails 5
 - React.js/Redux
 - PostgreSQL
 - ActiveRecord
