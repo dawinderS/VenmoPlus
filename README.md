@@ -14,7 +14,11 @@ More features will be added over time.
   - [Adding friends](#adding-friends)
   - [Viewing transaction histories](#viewing-transactional-histories)
   - [Liking payments](#liking-payments)
-- [Future Plans](#future-plans)
+  - [Dark Mode](#dark-mode)
+- [Status/Future Plans](#status-and-future-plans)
+
+## Demo
+[Visit Venmo+ Now](https://venmo-clone.herokuapp.com/)
 
 ## Technologies Used
 Venmo+ is built using:
@@ -53,7 +57,10 @@ efficiently render transaction histories of the current user and their friends
 ### Liking payments
 Applied ActiveRecord eager-loading on associations to eliminate N+1 queries and optimize backend API requests
 
-## Future Plans
+### Dark Mode
+
+
+## Status and Future Plans
 Some features I am currently working on and would like to add in the future are
 - searching up a user to make a quick payment
 - creating a chart comparing users' payments sent/received
