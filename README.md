@@ -9,11 +9,11 @@ More features will be added over time.
 ## Table of Contents
 - [Technologies](#technologies-used)
 - [Features](#features)
-  - User auth
-  - Making payment
-  - Adding friends
-  - Viewing transaction histories
-  - Liking payments
+  - [User auth](#user-auth)
+  - [Making payments](#making-payments)
+  - [Adding friends](#adding-friends)
+  - [Viewing transaction histories](#viewing-transactional-histories)
+  - [Liking payments](#liking-payments)
 - [Future Plans](#future-plans)
 
 ## Technologies Used
@@ -31,15 +31,27 @@ Venmo+ is built using:
   - Users can add friends and be added by other users
   - Users can search up a user to make a payment/see transactions with them
 
-### User authorization
+### User auth
  - securely salt and hash users' passwords using BCrypt
  - users are able to sign up, login, and logout
  
-### Making a payment
+### Making payments
 - User is able to send payments to other users
+Incorporated polymorphic model associations allowing the user to create and send multiple payments,
+requests, and friendships, reducing the number of database tables by almost 50%
+
+### Adding friends
+Implemented an instant search feature utilizing React’s re-rendering on state change and a setTimeout function to
+send AJAX requests every quarter second, fetching real-time search results as the user types
 
 ### Viewing transactional histories
 Using polymorphic tables for transactions, the users' and their friends' transactions are displayed in their feed. User can also see transactions with specfic friends by clicking on their name in their friends list. The transaction list is in order of processed date and time.
+
+Employed JBuilder to declare users’ JSON objects, fetching appropriate data through the Redux cycle in order to
+efficiently render transaction histories of the current user and their friends
+
+### Liking payments
+Applied ActiveRecord eager-loading on associations to eliminate N+1 queries and optimize backend API requests
 
 ## Future Plans
 Some features I am currently working on and would like to add in the future are
