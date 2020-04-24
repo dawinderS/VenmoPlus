@@ -13,10 +13,7 @@ class Homepage extends React.Component {
         <NavBarContainer />
         <div className='mid-splash'>
           <img className='splashbackground' src={window.splash3} />
-          {/* <div className='splash-info1'>
-            <h3>The future of payments</h3>
-            <p></p>
-          </div> */}
+          
           <img className='splashbackground2' src={window.splash1} />
         </div>
         <div className='splash-info2'>

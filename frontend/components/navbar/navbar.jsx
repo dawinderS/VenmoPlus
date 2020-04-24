@@ -46,14 +46,17 @@ export const NavBar = ({ currentUser, logout }) => {
             <FaPlus />
           </div>
         </div>
-        <div id='nav-text1'>Redesigned.</div>
-        <div id='nav-text2'>Simplified.</div>
-        <Link className='signup-link' to="/signup">
-          <div id='signup-now-text'>Sign Up Now</div>
-        </Link>
-        <Link className='logout-link' to="/login">
-          <div id='login-text'>Log In</div>
-        </Link>
+        <div className='logo-links'>
+          <a href="https://github.com/dawinderS/" target="_blank" className='atag'><span>Github</span></a>
+          <a href="https://www.linkedin.com/in/dawinder-singh/" target="_blank" className='atag'><span>LinkedIn</span></a>
+          <a href="mailto:dawindernsingh@gmail.com" className='atag' id='mailref'><span>Contact Me</span></a>
+          <Link className='signup-link' to="/login">
+            <div id='signup-now-text'>Sign In</div>
+          </Link>
+          {/* <Link className='logout-link' to="/login">
+            <div id='login-text'>Log In</div>
+          </Link> */}
+        </div>
       </div>
     );
 
