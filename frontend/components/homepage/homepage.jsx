@@ -11,15 +11,29 @@ class Homepage extends React.Component {
     return (
       <div className='main-splash'>
         <NavBarContainer />
-        <div className='mid-splash'>
-          <img className='splashbackground' src={window.splash3} />
+        <div className='splash-info'>
+          <div className='splash-mov' id='splash-mov1'>
+            <video className='splash-video' autoPlay loop muted preload='auto'>
+              <source src="venmo_mov.mp4" type="video/mp4" ></source>
+            </video>
+          </div>
+          <div className='splash-mov' id='splash-mov2'>
+            <img src="phonepic1.png" />
+          </div>
+          <div className='splash-text'> 
+            <h1>
+              Easily make and
+              <br/>
+              share payments with
+              <br/>
+              your friends and fam
+            </h1>
+            <Link className='signupnow' to="/signup">
+              <div id='signuptext'>Sign Up Now</div>
+            </Link>
+            
+          </div>
           
-          <img className='splashbackground2' src={window.splash1} />
-        </div>
-        <div className='splash-info2'>
-          <video className='splash-video' controls autoPlay muted>
-            <source src="venmo_movie.mp4" type="video/mp4" ></source>
-          </video>
         </div>
         <div className='footer-holder'>  
           <div className='footer'>

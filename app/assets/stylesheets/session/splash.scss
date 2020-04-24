@@ -1,28 +1,91 @@
-.mid-splash {
+.splash-info {
+  padding-top: 80px;
+  margin-bottom: 70px;
+  padding-left: 10%;
+  padding-right: 10%;
+  overflow: hidden;
+  height: 670px;
   display: flex;
+  justify-content: center;
+
+}
+
+.splash-mov {
+  border: none;
+}
+
+.splash-video {
+  outline: none;
+}
+
+#splash-mov2 {
+  height: 670px;
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+  display: none;
+}
+
+@media screen and (max-width: 1020px) {
+  #splash-mov2 {
+    display: flex;
+  }
+  #splash-mov1 {
+    display: none;
+  }
+}
+
+#splash-mov2 img {
+  height: 96%;
+  
+}
+
+.splash-text {
+  height: 670px;
+  display: flex;
+  align-items: center;
   flex-direction: column;
-  background-color: #fff;
+  margin-top: 100px;
+  padding-left: 30px;
+  min-width: 414px;
+}
+
+.splash-text h1 {
+  font-weight: 300;
+  font-size: 50px;
+  line-height: 50px;
+  text-align: center;
+  letter-spacing: -.015em
+}
+
+.signupnow {
+  text-decoration: none;
+  padding: 16px 28px;
+  background: #3d95ce;
+  color: #fff;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  border-radius: 5px;
+  width: 78%;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.splashbackground {
-  // max-height: 800px;
-  display: block;
-  max-width: 100%;
-  margin-top: 150px;
-
+.signupnow:hover {
+  background: #95c3e2;
 }
 
-.splashbackground2 {
-  display: block;
-  max-width: 100%;
-  
-}
+
 .footer-holder {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  // justify-content: center;
   // align-items: center;
+  padding-left: 15%;
+  padding-right: 15%;
+  // width: 100%;
 }
 
 .footer {
@@ -32,8 +95,7 @@
   align-items: flex-start; ;
   justify-content: space-between;
   border-top: 1px solid rgba(0, 0, 0, 0.068);
-  margin-left: 80px;
-  margin-right: 80px;
+  
 }
 
 #splash-apple-logo {
@@ -49,21 +111,6 @@
   width: 140px;
   margin-top: 50px;
   cursor: pointer;
-}
-
-.splash-info2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  // margin-top: 50px;
-  margin-bottom: 80px;
-}
-
-.splash-video {
-  text-decoration: none;
-  width: 100%;
-  height: auto;
 }
 
 .footer .footer1 {

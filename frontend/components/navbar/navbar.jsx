@@ -49,7 +49,7 @@ export const NavBar = ({ currentUser, logout }) => {
         <div className='logo-links'>
           <a href="https://github.com/dawinderS/" target="_blank" className='atag'><span>Github</span></a>
           <a href="https://www.linkedin.com/in/dawinder-singh/" target="_blank" className='atag'><span>LinkedIn</span></a>
-          <a href="mailto:dawindernsingh@gmail.com" className='atag' id='mailref'><span>Contact Me</span></a>
+          <a href="https://www.dawindersingh.com/#cta" target='_blank' className='atag' id='mailref'><span>Contact Me</span></a>
           <Link className='signup-link' to="/login">
             <div id='signup-now-text'>Sign In</div>
           </Link>
