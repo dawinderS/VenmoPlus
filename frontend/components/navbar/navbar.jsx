@@ -31,7 +31,7 @@ export const NavBar = ({ currentUser, logout }) => {
       <div className='out-navbar'>
         <div className='logo-menu'>
           <div className='logo-menu-icon'>
-            <IoIosMenu size={26} />
+            {/* <IoIosMenu size={26} /> */}
             <div className='logo-menu-content'>
               <p>What's New</p>
               <p>How Venmo Works</p>

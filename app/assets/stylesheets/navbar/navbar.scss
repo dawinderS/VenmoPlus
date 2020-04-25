@@ -115,8 +115,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 20%;
-  padding-left: 50px;
+  min-width: 25%;
+  // padding-left: 50px;
 }
 
 .logo-menu1 {
@@ -139,8 +139,9 @@
 .logo-links {
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-width: 60%;
+  // justify-content: space-evenly;
+  min-width: 35%;
+  
 }
 
 .atag {
