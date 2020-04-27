@@ -34,12 +34,15 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    const errors = this.props.errors
+    const errors = this.props.errors;
+    let userErrors = errors.filter(error => error.includes('Username'));
+    let emailErrors0 = errors.filter(error => error.includes('Email'));
+    let emailErrors = emailErrors0.join(' / ');
+    let passwordErrors = errors.filter(error => error.includes('Password'));
     return (
       <div id='official-signup-div'>
         <NavBarContainer />
         <div className='signin-content'>      
-          <div>{errors}</div>
 
           <div className="auth-header-text">
             <p className="signup-header">Create your account</p>
@@ -53,18 +56,21 @@ class SignupForm extends React.Component {
                 <input className="auth-form-input" type="text" value={this.state.username} onChange={this.handleInput('username')} placeholder="username" />
                 {/* <span className="error-text">Required</span> */}
               </label>
+              <div id='login-errors2'>{userErrors}</div>
+
               <label className="auth-form-input-label email">
                 <span className="label-text">EMAIL</span>
                 <input className="auth-form-input" type="text" value={this.state.email} onChange={this.handleInput('email')} placeholder="email@example.com" />
                 {/* <span className="error-text">Required</span> */}
               </label>
-
+              <div id='login-errors2'>{emailErrors}</div>
 
               <label className="auth-form-input-label password">
                 <span className="label-text">PASSWORD</span>
                 <input className="auth-form-input" type="password" value={this.state.password} onChange={this.handleInput('password')} placeholder="••••••••" />
                 {/* <span className="error-text">Required</span> */}
               </label>
+              <div id='login-errors2'>{passwordErrors}</div>
 
             </div>
 

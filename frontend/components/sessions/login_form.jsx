@@ -15,6 +15,7 @@ class LoginForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
+    // this.removeErrors = this.removeErrors.bind(this);
   }
 
   // clear errors after they show
@@ -22,37 +23,76 @@ class LoginForm extends React.Component {
     this.props.clearErrors();
   }
 
-  handleInput(field) {
+  handleInput(field) { 
     return (e) => {
       this.setState({ [field]: e.target.value })
     }
   }
 
-  determineField() {
-    return (e) => {
-      if (e.target.value.includes('@')) {
-        return 'em'
-      }
-    }
-  }
+  // determineField() {
+  //   return (e) => {
+  //     if (e.target.value.includes('@')) {
+  //       return 'em'
+  //     }
+  //   }
+  // }
+
+  // handleType(type) {
+  //   e.preventDefault();
+  // }
+
+  // removeErrors() {
+  //   document.getElementById('login-errors').style.display = 'none';
+  // }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    console.log(user)
     this.props.login(user);
   }
 
   handleDemo(e) {
     e.preventDefault();
     const user = { username: 'Dawinder', email: 'user@gmail.com', password: 'password' }
-    this.props.login(user);
+    this.demo(user);
   }
 
-  handleType(type) {
-    e.preventDefault();
-  
+  demo(user) {
+    const intervalSpeed = 85;
+    const { username, password } = user;
+    const demoUsernameTime = username.length * intervalSpeed;
+    const demoPasswordTime = password.length * intervalSpeed;
+    const buffer = intervalSpeed * 2;
+    const totalDemoTime = demoUsernameTime + demoPasswordTime + buffer;
+    this.demoUsername(username, intervalSpeed);
+    setTimeout(() => this.demoPassword(password, intervalSpeed), demoUsernameTime);
+    setTimeout(() => this.props.login(user), totalDemoTime + 100);
   }
+
+  demoUsername(username, intervalSpeed) {
+    let i = 0;
+    setInterval(() => {
+      if (i <= username.length) {
+        this.setState({ username: username.slice(0, i) });
+        i++;
+      } else {
+        clearInterval();
+      }
+    }, intervalSpeed);
+  }
+
+  demoPassword(password, intervalSpeed) {
+    let j = 0;
+    setInterval(() => {
+      if (j <= password.length) {
+        this.setState({ password: password.slice(0, j) });
+        j++;
+      } else {
+        clearInterval();
+      }
+    }, intervalSpeed);
+  }
+
 
   render() {
     const errors = this.props.errors
@@ -60,7 +100,6 @@ class LoginForm extends React.Component {
       <div id='official-signup-div'>
         <NavBarContainer />
         <div className='signin-content'>
-          <div>{errors}</div>
 
           <div className="auth-login">
             <div className="auth-header-text">
@@ -71,18 +110,18 @@ class LoginForm extends React.Component {
 
               <div className="inputs">
 
-                <label className="login-label">
+                <label className="login-label" id='addpadding'>
                   <span className="login-span">USERNAME</span>
                   <input className="login-input" type="text" value={this.state.username} onChange={this.handleInput('username')} placeholder='username' />
                   {/* <span className="a2">Required</span> */}
                 </label>
 
-                <label className="login-label">
+                <label className="login-label" id='addpadding'>
                   <span className="login-span">PASSWORD</span>
                   <input className="login-input" type="password" value={this.state.password} onChange={this.handleInput('password')} placeholder="••••••••" />
                   {/* <span className="b2">Required</span> */}
                 </label>
-
+                <div id='login-errors'>{errors}</div>
                 <div className="login-bottom">
                   <button onClick={this.handleDemo} className="demo-button" id="demo-login">Demo Sign In</button>
                   <br/>

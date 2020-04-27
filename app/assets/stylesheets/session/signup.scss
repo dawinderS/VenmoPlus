@@ -5,8 +5,25 @@
 }
 
 .signin-content {
-  height: 95vh;
+  height: 90vh;
   padding-top: 80px;
+}
+
+#login-errors {
+  display: flex;
+  padding-left: 25px;
+  color: red;
+  padding-bottom: 15px;
+  opacity: 0.75;
+  font-size: 14px;
+}
+#login-errors2 {
+  display: flex;
+  padding-left: 25px;
+  color: red;
+  // padding-bottom: 15px;
+  opacity: 0.75;
+  font-size: 14px;
 }
 
 #footer-replace1 {
@@ -61,14 +78,14 @@
     flex-direction: column;
 }
 
-.fullname {
-    display: flex;
-}
+// .fullname {
+//     display: flex;
+// }
 
-.first-last-name {
-    float: left;
-    width: 50%;
-}
+// .first-last-name {
+//     float: left;
+//     width: 50%;
+// }
 
 .auth-form-input-label .label-text {
     color: #7f7f7f;
@@ -110,7 +127,7 @@
 }
 
 .auth-form label {
-    padding: 20px;
+    padding: 15px 20px;
 }
 
 .sign-up-button {
@@ -229,7 +246,7 @@
     outline: none !important;
 }
 
-.auth-form label {
+#addpadding {
     padding: 20px;
 }
 
