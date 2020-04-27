@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "react-router-dom";
 import { FaPlus } from 'react-icons/fa';
 import { FaUserCircle } from 'react-icons/fa';
+import NavBarContainer from "../navbar/navbar_container";
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -26,9 +28,18 @@ class LoginForm extends React.Component {
     }
   }
 
+  determineField() {
+    return (e) => {
+      if (e.target.value.includes('@')) {
+        return 'em'
+      }
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    console.log(user)
     this.props.login(user);
   }
 
@@ -47,39 +58,52 @@ class LoginForm extends React.Component {
     const errors = this.props.errors
     return (
       <div id='official-signup-div'>
-        <div id='space-creator'></div>
+        <NavBarContainer />
         <div className='signin-content'>
-          <Link to='/'>
-            <div className='logo-div'>
-              <img className="splashlogo1" src={window.splashlogo} />
-              <FaPlus color='black' size={28} />
-            </div>
-          </Link>
+          <div>{errors}</div>
 
-
-          <form className='signup-form'>
-            <div id='login-circle'>
-              <FaUserCircle size={65} />
+          <div className="auth-login">
+            <div className="auth-header-text">
+              <p className="signup-header">Sign in to Venmo+</p>
             </div>
-            <h3 id='create-acct'>Welcome back!</h3>
-            {errors.length ? (<p>{errors.join("\n")}</p>) : null}
-            <input type="text" placeholder='username' value={this.state.username} onChange={this.handleInput('username')} />
-            {/* <input type="email" placeholder='email' value={this.state.email} onChange={this.handleInput('email')} /> */}
-            <input type="password" placeholder='password' value={this.state.password} onChange={this.handleInput('password')} />
-            <div id='signin-demo-btns'>
-              <div id='signup-button' onClick={this.handleSubmit}>
-                <div id='signup-button-text'>Log In</div>
+
+            <form className="auth-form" onSubmit={this.handleSubmit}>
+
+              <div className="inputs">
+
+                <label className="login-label">
+                  <span className="login-span">USERNAME</span>
+                  <input className="login-input" type="text" value={this.state.username} onChange={this.handleInput('username')} placeholder='username' />
+                  {/* <span className="a2">Required</span> */}
+                </label>
+
+                <label className="login-label">
+                  <span className="login-span">PASSWORD</span>
+                  <input className="login-input" type="password" value={this.state.password} onChange={this.handleInput('password')} placeholder="••••••••" />
+                  {/* <span className="b2">Required</span> */}
+                </label>
+
+                <div className="login-bottom">
+                  <button onClick={this.handleDemo} className="demo-button" id="demo-login">Demo Sign In</button>
+                  <br/>
+                  <div className='bottom1'>
+                    <p>New to Venmo+?  <Link className='helpful-info' to='/signup' >Sign Up</Link></p>
+                    <button className="submit-button">Sign In</button>
+                  </div>
+                </div>
+
               </div>
-              <div id='signup-button2' onClick={this.handleDemo}>
-                <div id='signup-button-text'>Demo User</div>
-              </div>
-            </div>
-            <div id='already-user'>
-              Not a user yet?
-              <Link to='/signup' >Sign Up</Link>
-            </div>
 
-          </form>
+            </form>
+
+          </div>
+        </div>
+        <div id='footer-replace1'>
+          <div id='footer-help0'>Developed by Dawinder Singh</div>
+          <div id='footer-help'>
+            <a href="https://github.com/dawinderS/VenmoPlus" target="_blank" className='atag3'><div>Project Repo</div></a>
+            <a href="https://github.com/dawinderS/VenmoPlus/blob/master/README.md" target="_blank" className='atag3'><div>Project ReadMe</div></a>
+          </div>
         </div>
       </div>
     )

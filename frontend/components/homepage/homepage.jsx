@@ -60,11 +60,7 @@ class Homepage extends React.Component {
                 <div>Home</div>
               </Link>
             </div>
-            {/* <div className='footer1'>
-              <h4>Terms</h4>
-              <div>Legal</div>
-              <div>Privacy</div>
-            </div> */}
+            
             <a href="https://apps.apple.com/us/app/venmo/id351727428" target="_blank" >
               <img id='splash-apple-logo' src="get-it-on-apple.png" />
             </a>
@@ -74,7 +70,8 @@ class Homepage extends React.Component {
           </div>
         </div>
         <div className='below-footer'>
-          <div>Venmo+ is a service of PayPal+, Inc., a licensed provider of money transfer services (NMLS ID: 910457). All money transmission is provided by PayPal+, Inc. pursuant to PayPal+, Inc.’s licenses. © 2020 PayPal+, Inc.</div>
+          {/* <div>Venmo+ is a service of PayPal+, Inc., a licensed provider of money transfer services (NMLS ID: 910457). All money transmission is provided by PayPal+, Inc. pursuant to PayPal+, Inc.’s licenses. © 2020 PayPal+, Inc.</div> */}
+          <div>Venmo+ is a digit wallet inspired by Venmo and developed by Dawinder Singh. It was created utlizing Ruby on Rails for backend, React.js/Redux for frontend, and PostgreSQL for data storage.</div>
         </div>
         <div id='footer-replace'>
           <div id='footer-help0'>Developed by Dawinder Singh</div>

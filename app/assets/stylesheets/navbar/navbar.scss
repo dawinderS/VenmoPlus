@@ -11,6 +11,15 @@
   // border-bottom: 1px solid #ededed;
 }
 
+#faplusicon {
+  display: flex;
+  align-items: center;
+}
+
+.logo-div {
+  display: flex;
+}
+
 .nav-search-bar {
   display: flex;
   margin-left: 30px;
@@ -111,11 +120,18 @@
   // margin: 0px 50px;
 }
 
+#homelink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
 .logo-menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 25%;
+  min-width: 20%;
   // padding-left: 50px;
 }
 
@@ -140,7 +156,7 @@
   display: flex;
   align-items: center;
   // justify-content: space-evenly;
-  min-width: 35%;
+  min-width: 33%;
   
 }
 

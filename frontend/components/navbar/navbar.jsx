@@ -40,11 +40,14 @@ export const NavBar = ({ currentUser, logout }) => {
               <p>Contact Us</p>
             </div>
           </div>
-          <div className='logo-div'>
-            <img className="splashlogo" src={window.splashlogo} />
-            <Link to='/'></Link>
-            <FaPlus />
-          </div>
+          <Link id='homelink' to='/'>
+            <div className='logo-div'>
+              <img className="splashlogo" src={window.splashlogo} />
+              <div id='faplusicon'>
+                <FaPlus />
+              </div>
+            </div>
+          </Link>
         </div>
         <div className='logo-links'>
           <a href="https://github.com/dawinderS/" target="_blank" className='atag'><span>Github</span></a>
