@@ -29,22 +29,6 @@ class LoginForm extends React.Component {
     }
   }
 
-  // determineField() {
-  //   return (e) => {
-  //     if (e.target.value.includes('@')) {
-  //       return 'em'
-  //     }
-  //   }
-  // }
-
-  // handleType(type) {
-  //   e.preventDefault();
-  // }
-
-  // removeErrors() {
-  //   document.getElementById('login-errors').style.display = 'none';
-  // }
-
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
@@ -58,7 +42,7 @@ class LoginForm extends React.Component {
   }
 
   demo(user) {
-    const intervalSpeed = 85;
+    const intervalSpeed = 80;
     const { username, password } = user;
     const demoUsernameTime = username.length * intervalSpeed;
     const demoPasswordTime = password.length * intervalSpeed;
@@ -147,6 +131,22 @@ class LoginForm extends React.Component {
       </div>
     )
   }
+
+  // determineField() {
+  //   return (e) => {
+  //     if (e.target.value.includes('@')) {
+  //       return 'em'
+  //     }
+  //   }
+  // }
+
+  // handleType(type) {
+  //   e.preventDefault();
+  // }
+
+  // removeErrors() {
+  //   document.getElementById('login-errors').style.display = 'none';
+  // }
 }
 
 export default LoginForm;
