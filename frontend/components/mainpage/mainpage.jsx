@@ -8,9 +8,7 @@ import RequestIndexContainer from '../request/request_index_container';
 const Mainpage = ({ currentUser, logout, transactions, fetchTransactions }) => {
   return (
     <div className='mainpage'>
-      <div id='mainpage-navbar'>
-        <NavBarContainer />
-      </div>
+      <NavBarContainer />
       <div className='mainpage-body'>
         <div className='mainpage-col1'>
           <div className='mainpage-create-trans'>
@@ -40,6 +38,15 @@ const Mainpage = ({ currentUser, logout, transactions, fetchTransactions }) => {
           <div className='mainpage-req'>
             <RequestIndexContainer />
           </div>
+        </div>
+      </div>
+      <div id='footer-replace2'>
+        <div id='footer-help5'>Developed by Dawinder Singh</div>
+        <div id='footer-help'>
+          <a href="https://github.com/dawinderS/" target="_blank" className='atag4'><span>Github</span></a>
+          <a href="https://www.linkedin.com/in/dawinder-singh/" target="_blank" className='atag4'><span>LinkedIn</span></a>
+          {/* <a href="https://github.com/dawinderS/VenmoPlus" target="_blank" className='atag3'><div>Project Repo</div></a>
+          <a href="https://github.com/dawinderS/VenmoPlus/blob/master/README.md" target="_blank" className='atag3'><div>Project ReadMe</div></a> */}
         </div>
       </div>
 

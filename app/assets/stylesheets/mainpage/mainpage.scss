@@ -7,10 +7,12 @@
 
 }
 
+
 .mainpage-body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
 }
 
 .mainpage-trans {
@@ -70,3 +72,34 @@
   font-weight: bold;
 }
 
+.atag4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #3d95ce;
+  font-size: 19px;
+  font-weight: 500;
+  border: 1px solid #3d95ce;
+  border-radius: 5px;
+  padding: 7px 10px;
+}
+
+#footer-replace2 {
+  display: flex;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1.5px solid #3d95ce;
+  background: white;
+  margin-top: 100px;
+}
+
+#footer-help5 {
+  color: rgb(100, 100, 100);
+  font-size: 17px;
+}
