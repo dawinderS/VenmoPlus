@@ -100,7 +100,7 @@ class TransactionForm extends React.Component {
         <div className='trans-nav'>
           <strong className='transaction-form-btn2' onClick={(e) => this.handleSubmit(e)} >Pay</strong>
           <div id='trans-nav-sep'></div>
-          <strong className='transaction-form-button' onClick={(e) => this.handleSubmit(e)} >Request</strong>
+          <strong className='transaction-form-button' id='reqbtn-trans' onClick={(e) => this.handleSubmit(e)} >Request</strong>
         </div>
       </div>
     );

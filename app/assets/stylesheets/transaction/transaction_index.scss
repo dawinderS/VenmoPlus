@@ -1,6 +1,6 @@
 .trans-feed {
-  // border: 1px solid #e7ebee;
   background-color: white;
+  border: 1px solid #bbb;
 }
 
 .trans-nav {
@@ -9,25 +9,33 @@
   display: flex;
   justify-content: flex-start;
 }
+.trans-nav1 {
+  background: #f8f8f8;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  // border-left: 1px solid #bbb;
+  border-bottom: 1px solid #e8e8e8;
+}
 
-.trans-nav button {
-  margin-left: 15px;
-  padding: 5px;
-  border-radius: 50px;
+.trans-nav1 button {
+  margin-left: 17px;
+  padding: 7px 14px;
+  border-radius: 20px;
   text-align: center;
-  width: 70px;
-  color: #626d76;
+  // width: 70px;
+  color: #999;
+  background: #f8f8f8;
+  font-size: 13px;
+  font-weight: 500;
   outline: none;
   cursor: pointer;
+  border: 1px solid #ccc;
 }
 
-#first-nav-btn {
-  margin-left: 200px;
-}
-
-.trans-nav button:hover {
-  background: #057FC6;
-  color: white;
+.trans-nav1 button:hover {
+  border: 1px solid #3d95ce;
+  color: #3d95ce;
 }
 
 .transaction-index {
