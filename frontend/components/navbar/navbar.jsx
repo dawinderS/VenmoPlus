@@ -7,27 +7,29 @@ import { FaPlus } from 'react-icons/fa';
 export const NavBar = ({ currentUser, logout }) => {
   const display = currentUser ? (
     <div className='in-navbar'>
-      <div className='logo-menu1'>
-        <Link id='homelink' to='/' replace>
-          <div className='logo-div'>
-            <img className="splashlogo1" src={window.logo1} />
-            <div id='faplusicon'>
-              <FaPlus size={20}/>
+      <div id='navholder'>
+        <div className='logo-menu1'>
+          <Link id='homelink' to='/' replace>
+            <div className='logo-div'>
+              <img className="splashlogo1" src={window.logo1} />
+              <div id='faplusicon'>
+                <FaPlus size={19} color='white' />
+              </div>
             </div>
-          </div>
-        </Link>
-        <input className='nav-search' type="search" placeholder='Search people' />
-        <Link className='nav-home-link' to='/' replace><div>Home</div></Link>
-      </div>
-      <div className='logo-links1'>
-        <Link className='nav-home-link' to='/' replace><div>{currentUser.username}</div></Link>
-        <Link className='nav-home-link' to='/' replace><div>Statement</div></Link>
-        {/* <a href="https://www.linkedin.com/in/dawinder-singh/" target="_blank" className='nav-home-link'><div>LinkedIn</div></a> */}
-        <a href="https://www.dawindersingh.com/#cta" target='_blank' className='nav-home-link' ><div>Contact Me</div></a>
-        <div className='nav-home-link' onClick={logout}>Log Out</div>
-        {/* <Link className='logout-link' to="/login">
-            <div id='login-text'>Log In</div>
-          </Link> */}
+          </Link>
+          <input className='nav-search' type="search" placeholder='Search people' />
+          <Link className='nav-home-link' to='/' replace><div>Home</div></Link>
+        </div>
+        <div className='logo-links1'>
+          <Link className='nav-home-link' id='navusername' to='/' replace><div>{currentUser.username}</div></Link>
+          <Link className='nav-home-link' to='/' replace><div>Statement</div></Link>
+          {/* <a href="https://www.linkedin.com/in/dawinder-singh/" target="_blank" className='nav-home-link'><div>LinkedIn</div></a> */}
+          <a href="https://www.dawindersingh.com/#cta" target='_blank' className='nav-home-link' ><div>Contact me</div></a>
+          <div className='nav-home-link' onClick={logout}>Log out</div>
+          {/* <Link className='logout-link' to="/login">
+              <div id='login-text'>Log In</div>
+            </Link> */}
+        </div>
       </div>
     </div>
 

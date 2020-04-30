@@ -87,9 +87,11 @@ class TransactionForm extends React.Component {
             </div>
             <div className='trans-form2'>
               <div className='form-amount'>
+                <span>$</span>
                 <input type="pay-amount"
+                  type='number'
                   onChange={this.handleInput('amount')}
-                  placeholder="$0"
+                  placeholder="How much?"
                   value={this.state.amount} />
               </div>
             </div>
@@ -97,7 +99,7 @@ class TransactionForm extends React.Component {
         </div>
         <div className='trans-nav'>
           <strong className='transaction-form-btn2' onClick={(e) => this.handleSubmit(e)} >Pay</strong>
-          <div className='trans-nav-mid'></div>
+          <div id='trans-nav-sep'></div>
           <strong className='transaction-form-button' onClick={(e) => this.handleSubmit(e)} >Request</strong>
         </div>
       </div>
