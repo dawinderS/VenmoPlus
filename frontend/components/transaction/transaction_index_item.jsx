@@ -4,6 +4,7 @@ import { IoIosHeartEmpty, IoMdHeart, IoIosGlobe } from 'react-icons/io';
 
 const TransactionIndexItem = ({ transaction }) => {
   const after_dec = transaction.amount.toString().split('.')[1]
+  console.log(transaction.type)
     if ( transaction.type === 'show') {
       return (
         <div className='transaction-index'>

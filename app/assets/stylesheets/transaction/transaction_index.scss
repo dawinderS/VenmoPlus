@@ -1,6 +1,7 @@
 .trans-feed {
   background-color: white;
   border: 1px solid #bbb;
+  width: 100%;
 }
 
 .trans-nav {
@@ -38,16 +39,29 @@
   color: #3d95ce;
 }
 
+#trans-btn3 {
+  background: #e9f4fa;
+  color: #4884f7;
+  border: 1px solid #adccf7;
+}
+
+.trans-index-show {
+  display: none;
+}
+
+#users-trans {
+  display: flex;
+  flex-direction: column;
+}
+
 .transaction-index {
   display: flex;
   // justify-content: center;
   flex-direction: column;
-  border-bottom: 8px solid #f0eded;
+  border-bottom: 8px solid #EEF0F4;
   border-bottom-left-radius: 100px;
   padding: 25px;
-  width: 580px;
   height: 210px;
-  
 }
 
 .trans-summary {
@@ -55,6 +69,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   height: 55%;
+  width: 100%;
 }
 
 .trans-logo-pic {
@@ -66,7 +81,16 @@
 .trans-descr {
   display: flex;
   flex-direction: column;
-  width: 402px;
+  width: 100%;
+}
+
+.transaction-description {
+  color: #262626;
+  padding-left: 8px;
+  font-size: 27px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  width: 100%;
 }
 
 .trans-descr strong {
@@ -96,21 +120,12 @@
   padding-left: 8px;
 }
 
-.transaction-description {
-  color: #262626;
-  padding-left: 8px;
-  font-size: 27px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  width: 402px;
-}
-
 .trans-amount {
   display: flex;
   justify-content: flex-end;
   width: 80px;
   color: #d0011b;
-  font-size: 24px;
+  font-size: 27px;
   font-weight: bold;
 }
 
@@ -123,6 +138,7 @@
 
 .trans-heart-btn {
   color: #6a757f;
+  cursor: pointer;
 }
 .trans-heart-btn1 {
   color: #6a757f;
