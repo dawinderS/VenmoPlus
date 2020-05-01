@@ -54,7 +54,7 @@ const TransactionIndexItem = ({ transaction }) => {
               </div>
             </div>
             <div className='trans-amount'>
-              <IoIosGlobe className='trans-heart-btn' size={25} /> 
+              <IoIosGlobe className='trans-heart-btn1' size={25} /> 
             </div>
           </div>
           <div className='trans-like-btn'>
