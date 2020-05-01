@@ -131,9 +131,6 @@ class TransactionIndex extends React.Component {
       return <TransactionIndexItem transaction={transaction} key={transaction.id} />
     });
 
-    console.log(usersTransactions)
-    console.log(friendsTransactions)
-
     return (
       <div className='trans-feed'>
         <div className='trans-nav1'>

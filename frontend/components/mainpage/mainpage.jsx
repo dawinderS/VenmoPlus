@@ -22,22 +22,22 @@ const Mainpage = ({ currentUser, logout, transactions, fetchTransactions }) => {
             </div>
           </div>
           <div className='user-all'>
-            <div className='trans-nav'>
-              <strong>User Profile</strong>
-              
-            </div>
             <div className='mainpage-col2'>
               <div className='mainpage-user-prof'>
-                <div className='user-prof-1'>
-                  <img className='trans-logo-pic' src="profile-logo.png" />
-                  <div>{currentUser.username}</div>
+                <div className='trans-logo-pic'>
+                  <img className='trans-logo-pic1' src="profile-logo.png" />
                 </div>
-                <div className='user-credit'>${currentUser.venmoCredit}</div>
-                <div>Friends</div>
+                <div className='user-prof-hold'>
+                  <Link className='user-prof-user' to='/' replace><div>{currentUser.username}</div></Link>
+                  <Link className='user-prof-email' to='/' replace><div>{currentUser.email}</div></Link>
+                </div>
               </div>
             </div>
-            <div className='mainpage-req'>
-              sdfsdfsdfsdf
+            <div className='user-credit'>
+              <span>Balance:</span>${currentUser.venmoCredit}
+            </div>
+            <div className='mainpage-friends'>
+              <div>Friends</div>
             </div>
           </div>
         </div>
