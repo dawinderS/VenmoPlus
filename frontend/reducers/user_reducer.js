@@ -5,6 +5,13 @@ const _nullUser = {
   username: null,
   email: null,
   venmo_credit: 250.00,
+  friends_with: null,
+  friend_status: null,
+  friendships: {
+    friends: [],
+    friend_requests: [],
+    pending_friends: []
+  },
   errors: []
 }
 

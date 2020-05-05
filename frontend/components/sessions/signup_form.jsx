@@ -2,7 +2,7 @@ import React from "react";
 import { FaPlus } from 'react-icons/fa';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link } from "react-router-dom";
-
+import NavBarContainer from "../navbar/navbar_container";
 
 
 class SignupForm extends React.Component {
@@ -34,37 +34,59 @@ class SignupForm extends React.Component {
   }
 
   render() {
-    const errors = this.props.errors
+    const errors = this.props.errors;
+    let userErrors = errors.filter(error => error.includes('Username'));
+    let emailErrors0 = errors.filter(error => error.includes('Email'));
+    let emailErrors = emailErrors0.join(' / ');
+    let passwordErrors = errors.filter(error => error.includes('Password'));
     return (
       <div id='official-signup-div'>
-        <div id='space-creator'></div>
-        <div className='signin-content'>
-          <Link to='/'>
-            <div className='logo-div'>
-              <img className="splashlogo1" src={window.splashlogo} />
-              <FaPlus color='black' size={28} />
-            </div>
-          </Link>
+        <NavBarContainer />
+        <div className='signin-content'>      
 
-          <div>{errors}</div>
+          <div className="auth-header-text">
+            <p className="signup-header">Create your account</p>
+          </div>
+          <form className="auth-form" onSubmit={this.handleSubmit}>
 
-          <form className='signup-form'>
-            <div id='login-circle'>
-              <FaUserCircle size={65} />
+            <div className="inputs">
+
+              <label className="auth-form-input-label email">
+                <span className="label-text">USERNAME</span>
+                <input className="auth-form-input" type="text" value={this.state.username} onChange={this.handleInput('username')} placeholder="username" />
+                {/* <span className="error-text">Required</span> */}
+              </label>
+              <div id='login-errors2'>{userErrors}</div>
+
+              <label className="auth-form-input-label email">
+                <span className="label-text">EMAIL</span>
+                <input className="auth-form-input" type="text" value={this.state.email} onChange={this.handleInput('email')} placeholder="email@example.com" />
+                {/* <span className="error-text">Required</span> */}
+              </label>
+              <div id='login-errors2'>{emailErrors}</div>
+
+              <label className="auth-form-input-label password">
+                <span className="label-text">PASSWORD</span>
+                <input className="auth-form-input" type="password" value={this.state.password} onChange={this.handleInput('password')} placeholder="••••••••" />
+                {/* <span className="error-text">Required</span> */}
+              </label>
+              <div id='login-errors2'>{passwordErrors}</div>
+
             </div>
-            <h3 id='create-acct'>Create your account</h3>
-            <input type="text" placeholder='username' value={this.state.username} onChange={this.handleInput('username')} />
-            <input type="email" placeholder='email' value={this.state.email} onChange={this.handleInput('email')} />
-            <input type="password" placeholder='password' value={this.state.password} onChange={this.handleInput('password')} />
-            <div id='signup-button' onClick={this.handleSubmit}>
-              <div id='signup-button-text'>Sign Up</div>
+
+            <div className="bottom">
+              <p>Already an user? <Link className='helpful-info' to='/login' >Sign In</Link></p>
+              <input className="sign-up-button" type="submit" value="Sign Up" />
             </div>
-            <div id='already-user'>
-              Already an user? 
-              <Link to='/login' >Log In</Link>
-            </div>
-            
           </form>
+        </div>
+        
+        <div id='footer-replace1'>
+          <div id='footer-help0'>Developed by Dawinder Singh</div>
+          <div id='footer-help'>
+            <a href="https://github.com/dawinderS/VenmoPlus" target="_blank" className='atag3'><div>Project Repo</div></a>
+            <a href="https://github.com/dawinderS/VenmoPlus/blob/master/README.md" target="_blank" className='atag3'><div>Project ReadMe</div></a>
+          </div>
         </div>
       </div>
 

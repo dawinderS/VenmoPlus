@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import Mainpage from './mainpage';
 import { fetchTransactions } from '../../util/transaction_api_util';
+import { fetchUser } from '../../util/user_api_util';
 
 const msp = state => ({
   currentUser: state.entities.users[state.session.id],
@@ -10,7 +11,8 @@ const msp = state => ({
 
 const mdp = (dispatch) => ({
   logout: () => dispatch(logout()),
-  fetchTransactions: () => dispatch(fetchTransactions)
+  fetchTransactions: () => dispatch(fetchTransactions()),
+  fetchUser: () => dispatch(fetchUser()),
 });
 
 const MainpageContainer = connect(msp, mdp)(Mainpage);

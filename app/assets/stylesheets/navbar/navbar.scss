@@ -2,31 +2,42 @@
   position: fixed;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  min-height: 60px;
-  max-height: 60px;
-  background: #0aa18d;
-  // border-bottom: 1px solid #ededed;
+  height: 55px;
+  background: #3d95ce;
 }
 
-.nav-search-bar {
+#navholder {
   display: flex;
-  margin-left: 30px;
-  height: 25px;
-  width: 220px;
-  position: relative;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  width: 1000px;
+}
+
+#faplusicon {
+  display: flex;
+  align-items: center;
+}
+
+.logo-div {
+  display: flex;
 }
 
 .nav-search {
+  display: flex;
   outline: none;
-  height: 100%;
-  border: none;
-  width: 100%;
+  height: 58%;
+  min-width: 255px;
   padding-left: 8px;
-  font-size: 13px;
-  font-weight: bold;
-  border-radius: 6px;
+  padding-right: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  // border-radius: 5px;
+  margin-right: 5px;
+  margin-left: 12px;  
+  border: 1px solid #2169A1;
 }
 
 .nav-search-icon {
@@ -35,45 +46,39 @@
   top: 5px
 }
 
-.nav-left-side {
-  margin: auto;
+.logo-links1 {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   // justify-content: space-evenly;
+  min-width: 33%;
   height: 100%;
-}
-
-.nav-left-side div {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
   color: white;
-  cursor: pointer;
-  height: 53px;
-  padding-right: 12px;
-  padding-left: 12px;
+  justify-content: center;
+  // margin-left: auto;
 }
 
 .nav-home-link {
-  text-decoration: none;
-}
-
-.nav-home-link div {
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-decoration: none;
   color: white;
   font-size: 14px;
-  // font-weight: bolder;
-  padding-left: 8px;
-  padding-right: 8px;
-  margin-left: 8px;
   cursor: pointer;
-  height: 53px;
+  height: 100%;
+  text-shadow: 0 1px 0 #1B567F;
+  font-weight: 450;
+  padding: 0 10px;
+  margin-right: 6px;
 }
 
-.nav-home-link div:hover {
-  background-color: #17b8a2;
+#navusername {
+  font-weight: 900;
+}
+
+
+.nav-home-link:hover {
+  background-color: #50a9e6;
 }
 
 .nav-user-link {
@@ -98,42 +103,112 @@
 
 .out-navbar {
   position: fixed;
+  z-index: 1;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   min-height: 70px;
   max-height: 70px;
   background: #fff;  
+  border-bottom: 1px solid #ededed;
+  // margin: 0px 50px;
+}
+
+#homelink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+  cursor: pointer;
 }
 
 .logo-menu {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  padding-left: 37px;
+  justify-content: center;
+  min-width: 20%;
+  // padding-left: 50px;
 }
 
 .logo-menu1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  padding-left: 37px;
-  margin-right: 100px;
-  margin-left: 10px;
+  height: 100%;
+
 }
 
 .logo-menu-icon {
-  padding-right: 22px;
+  margin-right: 22px;
   position: relative;
   display: inline-block;  
+  cursor: pointer;
 }
 
-// .logo-div {
-//   display: flex;
-//   align-items: center;
-// }
+.logo-links {
+  display: flex;
+  align-items: center;
+  // justify-content: space-evenly;
+  min-width: 33%;
+  
+}
+
+.atag {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+  text-decoration: none;
+  color: #3d95ce;
+  font-size: 17px;
+}
+
+.atag:hover {
+  color: #95c3e2;
+}
+
+#mailref {
+  margin-right: 60px;
+}
+
+.splash-link-signup {
+  cursor: pointer;
+  background: #3d95ce; 
+  margin-right: 40px;
+}
+
+.signup-link {
+  text-decoration: none;
+  color: #3d95ce;
+  margin-right: 40px;
+}
+
+.signup-link:hover {
+  display: flex;
+  align-items: center;
+  color: #95c3e2;
+}
+
+#signup-now-text {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.logout-link {
+  text-decoration: none;
+  color: #68787f;
+}
+
+.logout-link:hover {
+  color: black;
+}
+
+
+.logo-div {
+  // display: flex;
+  // align-items: center;
+  cursor: pointer;
+}
 
 .logo-menu-content {
   display: none;
@@ -164,7 +239,7 @@
 }
 
 .logo-menu-content p:hover {
-  background: #0aa18d;
+  background: #3d95ce;
   color: #fff;
 }
 
@@ -172,106 +247,24 @@
   width: 95px;
   height: 18.21px;
   cursor: pointer;
+  // margin-right: 1px;
 }
-
-.splash-link-signup {
+.splashlogo1 {
+  width: 123px;
+  height: 23.5px;
   cursor: pointer;
-  width: 115px;
-  height: 38px;
-  border-radius: 8px;
-  background: #007f6e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: 40px;
+  // margin-right: 1px;
 }
 
-.splash-link-signup:hover {
-  background: #0aa18d;
-}
-
-.signup-link {
-  text-decoration: none;
-  color: #007f6e;
-  margin-left: auto;
-  margin-right: 40px;
-}
-
-.signup-link:hover {
-  color: #025a4e;
-}
-
-#signup-now-text {
-  font-size: 16px;
-  font-weight: bolder;
-}
-
-.splash-link-login {
-  cursor: pointer;
-  width: 100px;
-  height: 38px;
-  border-radius: 8px;
-  background: #7e9daa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 55px;
-}
-
-.splash-link-login:hover {
-  background: #81969e;
-}
-
-.logout-link {
-  text-decoration: none;
-  color: #68787f;
-  margin-right: 45px;
-}
-
-.logout-link:hover {
-  color: black;
-}
-
-#login-text {
-  font-size: 16px;
-  font-weight: bolder;
-}
-
-#nav-text1 {
-  font-size: 13px;
-  font-weight: bolder;
-  font-family: 'Courier New', Courier, monospace;
-  font-style: italic;
-  margin-left: 42px;
-  letter-spacing: 1px;
-}
-
-#nav-text2 {
-  font-size: 13px;
-  font-weight: bolder;
-  font-family: 'Courier New', Courier, monospace;
-  font-style: italic;
-  margin-left: 24px;
-  letter-spacing: 1px;
-}
 
 @media screen and (max-width: 830px) {
-  #nav-text1 {
-    display: none;
-  }
-
-  #nav-text2 {
-    display: none;
-  }
+  
 }
 
 @media screen and (max-width: 550px) {
-  .splash-link-signup {
-    margin-right: 25px;
-  }
-
-  .splash-link-login {
-    margin-right: 30px;
-  }
+  
 }
+
+// input::placeholder {
+//   color: grey;
+// }
