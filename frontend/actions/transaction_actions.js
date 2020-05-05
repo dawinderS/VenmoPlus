@@ -42,7 +42,7 @@ export const fetchTransaction = transactionId => dispatch => (
 
 export const createTransaction = transaction => dispatch => (
   TransactionAPIUtil.createTransaction(transaction).then(
-    transaction => dispatch(receiveTransaction(transaction)),
+    transactions => dispatch(fetchTransactions()),
     errors => dispatch(receiveTransactionErrors(errors))
   )
 );

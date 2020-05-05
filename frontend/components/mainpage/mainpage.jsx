@@ -5,7 +5,7 @@ import TransactionIndexContainer from '../transaction/transaction_index_containe
 import TransactionFormContainer from '../transaction/transaction_form_container';
 import RequestIndexContainer from '../request/request_index_container';
 
-const Mainpage = ({ currentUser, logout, transactions, fetchTransactions }) => {
+const Mainpage = ({ currentUser, fetchUser, logout, transactions, fetchTransactions }) => {
   return (
     <div className='mainpage'>
       <NavBarContainer />

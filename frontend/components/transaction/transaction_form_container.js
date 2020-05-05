@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { createTransaction, fetchTransactions } from '../../actions/transaction_actions';
 import TransactionForm from './transaction_form'
+import { fetchUser, updateUser } from '../../actions/user_action';
+
 
 const msp = (state) => ({
   transaction: { user_id: '', recipient: '', amount: '', description: '' },
@@ -10,7 +12,9 @@ const msp = (state) => ({
 
 const mdp = (dispatch) => ({
   createTransaction: transaction => dispatch(createTransaction(transaction)),
-  fetchTransactions: () => dispatch(fetchTransactions())
+  // fetchTransactions: () => dispatch(fetchTransactions()),
+  fetchUser: userId => dispatch(fetchUser(userId)),
+  // updateUser: user => dispatch(updateUser(user))
 });
 
 

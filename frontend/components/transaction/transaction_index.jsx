@@ -103,8 +103,9 @@ class TransactionIndex extends React.Component {
 
   render() {
     if (!this.props.transactions) return null;
+    const ordered = this.props.transactions.reverse();
 
-    const publicTrans = this.props.transactions.filter(transaction =>
+    const publicTrans = ordered.filter(transaction =>
       transaction.user.username != this.props.currentUser.username && transaction.recipient.username != this.props.currentUser.username
     );
 
@@ -113,7 +114,7 @@ class TransactionIndex extends React.Component {
       return <TransactionIndexItem transaction={transaction} key={transaction.id} />
     });
 
-    const friendsTrans = this.props.transactions.filter(transaction =>
+    const friendsTrans = ordered.filter(transaction =>
       transaction.user.username === this.props.currentUser.username || transaction.recipient.username === this.props.currentUser.username
     );
 
@@ -122,7 +123,7 @@ class TransactionIndex extends React.Component {
       return <TransactionIndexItem transaction={transaction} key={transaction.id} />
     });
 
-    const usersTrans = this.props.transactions.filter(transaction =>
+    const usersTrans = ordered.filter(transaction =>
       transaction.user.username === this.props.currentUser.username || transaction.recipient.username === this.props.currentUser.username
     );
 

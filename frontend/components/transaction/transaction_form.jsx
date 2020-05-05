@@ -29,6 +29,8 @@ class TransactionForm extends React.Component {
     if (!this.state.description) errors.push("must give description");
     if (!this.validAmount()) errors.push("not a valid amount");
     if (errors.length === 0) return false;
+    // return errors;
+
   }
 
   handleInput(field) {
@@ -55,22 +57,33 @@ class TransactionForm extends React.Component {
       amount: this.state.amount,
       description: this.state.description
     };
+
+    const user = {
+      id: this.props.currentUserId,
+      email: this.props.users[0].email,
+      username: this.props.users[0].username,
+      venmoCredit: this.props.users[0].venmoCredit - this.state.amount
+    }
+
     if (this.invalidTransactionInput()) {
-      console.log(this.state.errors)
+      console.log(1)
+      // return this.invalidTransactionInput();
     } else {
-      this.props.createTransaction(transaction).then(
-        () => { this.clearForm() } 
-      );
+      this.props.createTransaction(transaction)
+      .then( () => { this.clearForm() } )
+      .then( () => this.props.fetchUser(this.props.currentUserId))
     }
   }
 
   render() {
+    // const errors = this.invalidTransactionInput();
+
     return (
       <div className='trans-top'>
         <div className="all-trans-form1">
           <div className='trans-form1'>
             <div className="form-inputs">
-            <div className='trans-errors'>{this.invalidTransactionInput()}</div>
+            <div className='trans-errors' id='trans-errors'>{this.invalidTransactionInput()}</div>
               <div className='recipient-div'>
                 <input type="text"
                   placeholder='username'
@@ -98,9 +111,9 @@ class TransactionForm extends React.Component {
           </div>
         </div>
         <div className='trans-nav'>
-          <strong className='transaction-form-btn2' onClick={(e) => this.handleSubmit(e)} >Pay</strong>
+          <strong className='transaction-form-btn' onClick={(e) => this.handleSubmit(e)} >Pay</strong>
           <div id='trans-nav-sep'></div>
-          <strong className='transaction-form-button' id='reqbtn-trans' onClick={(e) => this.handleSubmit(e)} >Request</strong>
+          <strong className='transaction-form-btn' id='reqbtn-trans' onClick={(e) => this.handleSubmit(e)} >Request</strong>
         </div>
       </div>
     );
